@@ -9,27 +9,24 @@ class AddWorkoutViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var exerciseTextField: UITextField!
-    
-    @IBOutlet weak var setTextField: UITextField!
-    
-    @IBOutlet weak var repsTextField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
+      
      
     }
     
-    @IBAction func savePressed(_ sender: UIButton) {
-        
-        let workOut = Workout(title: titleTextField.text!, exercise: exerciseTextField.text! , reps: Int(repsTextField.text!)!, set: Int(setTextField.text!)!)
-        
-        workoutList?.append(workOut)
-       
-        createAlertAdd(title: "Saved", message: "Your workout has been saved")
-        
-     
-    }
+//    @IBAction func savePressed(_ sender: UIButton) {
+//
+//        let workOut = Workout(title: titleTextField.text!, exercise: exerciseTextField.text!))
+//
+//        workoutList?.append(workOut)
+//
+//        createAlertAdd(title: "Saved", message: "Your workout has been saved")
+//
+//
+//    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {

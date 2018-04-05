@@ -5,14 +5,10 @@ class Workout {
     
     var title: String
     var exercise: String
-    var reps: Int
-    var set: Int
     
-    init(title: String, exercise: String, reps: Int, set: Int) {
+    init(title: String, exercise: String) {
         self.title = title
         self.exercise = exercise
-        self.reps = reps
-        self.set = set
     }
     
 //    init(snapshot: DataSnapshot) {
