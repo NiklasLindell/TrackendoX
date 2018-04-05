@@ -8,12 +8,11 @@ class IntervalTimerViewController: UIViewController {
     
     @IBOutlet weak var runVSrestLbl: UILabel!
     
-
-    @IBOutlet weak var runLabel: UILabel!
+    @IBOutlet weak var runTextField: UITextField!
     
-    @IBOutlet weak var restLabel: UILabel!
+    @IBOutlet weak var restTextField: UITextField!
     
-    @IBOutlet weak var roundsLable: UILabel!
+    @IBOutlet weak var roundsTextField: UITextField!
     
     @IBOutlet weak var runSliderOutlet: UISlider!
     
@@ -59,7 +58,7 @@ class IntervalTimerViewController: UIViewController {
     //start-knappen som startar klockan
     @IBAction func StartBtn(_ sender: Any) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(IntervalTimerViewController.counter), userInfo: nil, repeats: true)
-        timeSliderOutlet.isHidden = true
+        runSliderOutlet.isHidden = true
         runTextField.isHidden = true
         startOutlet.isHidden = false
     }
@@ -75,7 +74,7 @@ class IntervalTimerViewController: UIViewController {
             timer.invalidate()
             StartBtn((Any).self)
             RestTime -= 1
-            timeSliderOutlet.isHidden = false
+            runSliderOutlet.isHidden = false
             startOutlet.isHidden = false
             
             audioPlayer.play()
@@ -86,13 +85,13 @@ class IntervalTimerViewController: UIViewController {
         timer.invalidate()
         RunTime = 0
         RestTime = 0
-        timeSliderOutlet.setValue(0, animated: true)
+        runSliderOutlet.setValue(0, animated: true)
         timeLbl.text = "0"
         
         audioPlayer.stop()
         
         runTextField.isHidden = false
-        timeSliderOutlet.isHidden = false
+        runSliderOutlet.isHidden = false
         startOutlet.isHidden = false
     }
     //Pausar klockan
