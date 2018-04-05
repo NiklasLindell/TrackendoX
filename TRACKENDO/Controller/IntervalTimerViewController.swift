@@ -27,25 +27,26 @@ class IntervalTimerViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     var timer = Timer()
-    var RunTime = 0
-    var RestTime = 0
+    var runTime = 0
+    var restTime = 0
     //var TotalSeconds = RunTime + RestTime
-    
-    var rounds = 0
+    var rounds = 1
     var pause = false
     var active = true
     
     
     //slidern som ändrar "run" sekundrarna
     @IBAction func runSlider(_ sender: UISlider) {
-        RunTime = Int(sender.value)
-        runTextField.text = String(RunTime)
+        runTime = Int(sender.value)
+        runTextField.text = String(runTime)
+        totalTime.text = String((runTime + restTime) * rounds)
     }
     
     //slidern som ändrar "rest" sekundrarna
     @IBAction func restSlider(_ sender: UISlider) {
-        RestTime = Int(sender.value)
-        restTextField.text = String(RestTime)
+        restTime = Int(sender.value)
+        restTextField.text = String(restTime)
+        totalTime.text = String((runTime + restTime) * rounds)
         
     }
     
@@ -53,55 +54,75 @@ class IntervalTimerViewController: UIViewController {
     @IBAction func roundSlider(_ sender: UISlider) {
         rounds = Int(sender.value)
         roundsTextField.text = String(rounds)
+        totalTime.text = String((runTime + restTime) * rounds)
     }
     
     //start-knappen som startar klockan
     @IBAction func StartBtn(_ sender: Any) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(IntervalTimerViewController.counter), userInfo: nil, repeats: true)
-        runSliderOutlet.isHidden = true
-        runTextField.isHidden = true
-        startOutlet.isHidden = false
+        startOutlet.isEnabled = false
     }
     
     //countdown timer
     @objc func counter() {
-        RunTime -= 1
-        RestTime -= 1
-        //        var TotalSeconds = RunTime + RestTime
-        //            TotalSeconds -= 1
-        timeLbl.text = String(RunTime)
-        if (RunTime == 0){
-            timer.invalidate()
-            StartBtn((Any).self)
-            RestTime -= 1
-            runSliderOutlet.isHidden = false
-            startOutlet.isHidden = false
+        if rounds > 0 {
             
-            audioPlayer.play()
+            totalTime.text = String((runTime + restTime) * rounds)
+            if runTime > 0 {
+                runVSrestLbl.text = "RUN"
+                timeLbl.text = String(runTime)
+                runTime -= 1
+                
+            }
+            else if (runTime == 0 && restTime > 0){
+                runVSrestLbl.text = "REST"
+                timeLbl.text = String(restTime)
+                restTime -= 1
+               
+                //  startOutlet.isHidden = false
+                //  audioPlayer.play()
+            }
+            else if (runTime == 0 && restTime == 0) {
+                rounds -= 1
+                runTime = Int(runSliderOutlet.value)
+                restTime = Int(restSliderOutlet.value)
+            } else {
+                timer.invalidate()
+                timeLbl.text = "0"
+                runVSrestLbl.text = "Activity"
+                startOutlet.isEnabled = true
+            }
+            
         }
     }
     //stop-knappen som stoppar klockan
     @IBAction func StopBtn(_ sender: Any) {
         timer.invalidate()
-        RunTime = 0
-        RestTime = 0
+        runTime = 0
+        restTime = 0
         runSliderOutlet.setValue(0, animated: true)
         timeLbl.text = "0"
         
         audioPlayer.stop()
         
-        runTextField.isHidden = false
-        runSliderOutlet.isHidden = false
-        startOutlet.isHidden = false
+        startOutlet.isEnabled = true
     }
     //Pausar klockan
     @IBAction func PauseBtn(_ sender: Any) {
         timer.invalidate()
         pause = false
+        startOutlet.isEnabled = true
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        runTime = Int((runSliderOutlet.maximumValue - runSliderOutlet.minimumValue) * 0.5)
+        restTime = Int((restSliderOutlet.maximumValue - restSliderOutlet.minimumValue) * 0.5)
+        rounds = Int((roundSliderOutlet.maximumValue - roundSliderOutlet.minimumValue) * 0.5)
+        
         
         do {
             let audioPath = Bundle.main.path(forResource: "alarm", ofType: ".mp3")
