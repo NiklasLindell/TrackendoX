@@ -32,7 +32,7 @@ class IntervalTimerViewController: UIViewController {
     //var TotalSeconds = RunTime + RestTime
     
     var rounds = 0
-    var isRunning = false
+    var pause = false
     var active = true
     
     
@@ -97,7 +97,7 @@ class IntervalTimerViewController: UIViewController {
     //Pausar klockan
     @IBAction func PauseBtn(_ sender: Any) {
         timer.invalidate()
-        isRunning = false
+        pause = false
     }
     
     override func viewDidLoad() {

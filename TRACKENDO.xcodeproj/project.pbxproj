@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FC5C37ED6641127E1736715 /* Pods_TRACKENDOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF8985FEC0221AA970E45BC /* Pods_TRACKENDOTests.framework */; };
+		45D1EA5D207637050061444F /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D1EA5C207637050061444F /* alarm.mp3 */; };
 		4F0C45CB0B61DE5BFBD29059 /* Pods_TRACKENDO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546F4BFB391FA18F594A7D30 /* Pods_TRACKENDO.framework */; };
 		4F2465C52063A5C100CB09A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F2465C42063A5C100CB09A2 /* GoogleService-Info.plist */; };
 		4F595D262057EC3B00E3DB0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F595D252057EC3B00E3DB0A /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		0E53479FFB71CB3A93E0E6F3 /* Pods-TRACKENDOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRACKENDOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRACKENDOTests/Pods-TRACKENDOTests.release.xcconfig"; sourceTree = "<group>"; };
+		45D1EA5C207637050061444F /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		4F2465C42063A5C100CB09A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F595D222057EC3B00E3DB0A /* TRACKENDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRACKENDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F595D252057EC3B00E3DB0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				4F79545D20654BBE000AF9A4 /* View */,
 				4F79545C20654BBC000AF9A4 /* Controller */,
 				4F595D2C2057EC3B00E3DB0A /* Assets.xcassets */,
+				45D1EA5C207637050061444F /* alarm.mp3 */,
 				4F595D312057EC3B00E3DB0A /* Info.plist */,
 			);
 			path = TRACKENDO;
@@ -270,6 +273,7 @@
 			files = (
 				4F595D302057EC3B00E3DB0A /* LaunchScreen.storyboard in Resources */,
 				4F595D2D2057EC3B00E3DB0A /* Assets.xcassets in Resources */,
+				45D1EA5D207637050061444F /* alarm.mp3 in Resources */,
 				4F2465C52063A5C100CB09A2 /* GoogleService-Info.plist in Resources */,
 				4FD2D1402057EE60004CAF36 /* README.md in Resources */,
 				4F595D2B2057EC3B00E3DB0A /* Main.storyboard in Resources */,
