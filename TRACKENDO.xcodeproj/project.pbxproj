@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FC5C37ED6641127E1736715 /* Pods_TRACKENDOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF8985FEC0221AA970E45BC /* Pods_TRACKENDOTests.framework */; };
+		4F0C45CB0B61DE5BFBD29059 /* Pods_TRACKENDO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546F4BFB391FA18F594A7D30 /* Pods_TRACKENDO.framework */; };
+		4F2465C52063A5C100CB09A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F2465C42063A5C100CB09A2 /* GoogleService-Info.plist */; };
+		4F595D262057EC3B00E3DB0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F595D252057EC3B00E3DB0A /* AppDelegate.swift */; };
+		4F595D282057EC3B00E3DB0A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F595D272057EC3B00E3DB0A /* ListViewController.swift */; };
+		4F595D2B2057EC3B00E3DB0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F595D292057EC3B00E3DB0A /* Main.storyboard */; };
+		4F595D2D2057EC3B00E3DB0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F595D2C2057EC3B00E3DB0A /* Assets.xcassets */; };
+		4F595D302057EC3B00E3DB0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F595D2E2057EC3B00E3DB0A /* LaunchScreen.storyboard */; };
+		4F595D3B2057EC3B00E3DB0A /* TRACKENDOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F595D3A2057EC3B00E3DB0A /* TRACKENDOTests.swift */; };
+		4F79545F20654C24000AF9A4 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79545E20654C24000AF9A4 /* LogInController.swift */; };
+		4F79546120654C35000AF9A4 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79546020654C35000AF9A4 /* LogOutViewController.swift */; };
+		4F79546520654D02000AF9A4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79546420654D02000AF9A4 /* SignUpViewController.swift */; };
+		4F79546720655A76000AF9A4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79546620655A76000AF9A4 /* WelcomeViewController.swift */; };
+		4FB0389A2074F66300D06C0B /* IntervalTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB038992074F66200D06C0B /* IntervalTimerViewController.swift */; };
+		4FD2D1402057EE60004CAF36 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4FD2D13F2057EE60004CAF36 /* README.md */; };
+		4FD3F6C22066ACBD003A5484 /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */; };
+		4FF9D8F12063B24C0080B899 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9D8F02063B24C0080B899 /* Workout.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F595D372057EC3B00E3DB0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F595D1A2057EC3B00E3DB0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F595D212057EC3B00E3DB0A;
+			remoteInfo = TRACKENDO;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E53479FFB71CB3A93E0E6F3 /* Pods-TRACKENDOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRACKENDOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRACKENDOTests/Pods-TRACKENDOTests.release.xcconfig"; sourceTree = "<group>"; };
+		4F2465C42063A5C100CB09A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4F595D222057EC3B00E3DB0A /* TRACKENDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRACKENDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F595D252057EC3B00E3DB0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F595D272057EC3B00E3DB0A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		4F595D2A2057EC3B00E3DB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F595D2C2057EC3B00E3DB0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F595D2F2057EC3B00E3DB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F595D312057EC3B00E3DB0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F595D362057EC3B00E3DB0A /* TRACKENDOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRACKENDOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F595D3A2057EC3B00E3DB0A /* TRACKENDOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRACKENDOTests.swift; sourceTree = "<group>"; };
+		4F595D3C2057EC3B00E3DB0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F79545E20654C24000AF9A4 /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
+		4F79546020654C35000AF9A4 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		4F79546420654D02000AF9A4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4F79546620655A76000AF9A4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4FB038992074F66200D06C0B /* IntervalTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerViewController.swift; sourceTree = "<group>"; };
+		4FD2D13F2057EE60004CAF36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
+		4FF9D8F02063B24C0080B899 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		546F4BFB391FA18F594A7D30 /* Pods_TRACKENDO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TRACKENDO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EF8985FEC0221AA970E45BC /* Pods_TRACKENDOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TRACKENDOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8F8B117003B8E9D2842A256 /* Pods-TRACKENDO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRACKENDO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRACKENDO/Pods-TRACKENDO.debug.xcconfig"; sourceTree = "<group>"; };
+		C10C48087FF6C55ED2F7FD99 /* Pods-TRACKENDO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRACKENDO.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRACKENDO/Pods-TRACKENDO.release.xcconfig"; sourceTree = "<group>"; };
+		CD9A94213D23DCC840317C21 /* Pods-TRACKENDOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRACKENDOTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRACKENDOTests/Pods-TRACKENDOTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F595D1F2057EC3B00E3DB0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F0C45CB0B61DE5BFBD29059 /* Pods_TRACKENDO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F595D332057EC3B00E3DB0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC5C37ED6641127E1736715 /* Pods_TRACKENDOTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AD6EFD8465C44ACC3B0385F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				546F4BFB391FA18F594A7D30 /* Pods_TRACKENDO.framework */,
+				8EF8985FEC0221AA970E45BC /* Pods_TRACKENDOTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F595D192057EC3B00E3DB0A = {
+			isa = PBXGroup;
+			children = (
+				4F2465C42063A5C100CB09A2 /* GoogleService-Info.plist */,
+				4FD2D13F2057EE60004CAF36 /* README.md */,
+				4F595D242057EC3B00E3DB0A /* TRACKENDO */,
+				4F595D392057EC3B00E3DB0A /* TRACKENDOTests */,
+				4F595D232057EC3B00E3DB0A /* Products */,
+				F54F21DC3E1AD56D4DF4E15E /* Pods */,
+				3AD6EFD8465C44ACC3B0385F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4F595D232057EC3B00E3DB0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F595D222057EC3B00E3DB0A /* TRACKENDO.app */,
+				4F595D362057EC3B00E3DB0A /* TRACKENDOTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F595D242057EC3B00E3DB0A /* TRACKENDO */ = {
+			isa = PBXGroup;
+			children = (
+				4F79545B20654BB3000AF9A4 /* Model */,
+				4F79545D20654BBE000AF9A4 /* View */,
+				4F79545C20654BBC000AF9A4 /* Controller */,
+				4F595D2C2057EC3B00E3DB0A /* Assets.xcassets */,
+				4F595D312057EC3B00E3DB0A /* Info.plist */,
+			);
+			path = TRACKENDO;
+			sourceTree = "<group>";
+		};
+		4F595D392057EC3B00E3DB0A /* TRACKENDOTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F595D3A2057EC3B00E3DB0A /* TRACKENDOTests.swift */,
+				4F595D3C2057EC3B00E3DB0A /* Info.plist */,
+			);
+			path = TRACKENDOTests;
+			sourceTree = "<group>";
+		};
+		4F79545B20654BB3000AF9A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4FF9D8F02063B24C0080B899 /* Workout.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F79545C20654BBC000AF9A4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F595D252057EC3B00E3DB0A /* AppDelegate.swift */,
+				4F79545E20654C24000AF9A4 /* LogInController.swift */,
+				4F79546420654D02000AF9A4 /* SignUpViewController.swift */,
+				4F79546620655A76000AF9A4 /* WelcomeViewController.swift */,
+				4F595D272057EC3B00E3DB0A /* ListViewController.swift */,
+				4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */,
+				4F79546020654C35000AF9A4 /* LogOutViewController.swift */,
+				4FB038992074F66200D06C0B /* IntervalTimerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4F79545D20654BBE000AF9A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F595D2E2057EC3B00E3DB0A /* LaunchScreen.storyboard */,
+				4F595D292057EC3B00E3DB0A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F54F21DC3E1AD56D4DF4E15E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8F8B117003B8E9D2842A256 /* Pods-TRACKENDO.debug.xcconfig */,
+				C10C48087FF6C55ED2F7FD99 /* Pods-TRACKENDO.release.xcconfig */,
+				CD9A94213D23DCC840317C21 /* Pods-TRACKENDOTests.debug.xcconfig */,
+				0E53479FFB71CB3A93E0E6F3 /* Pods-TRACKENDOTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F595D212057EC3B00E3DB0A /* TRACKENDO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F595D3F2057EC3B00E3DB0A /* Build configuration list for PBXNativeTarget "TRACKENDO" */;
+			buildPhases = (
+				7623A1425871D26C8DDF7802 /* [CP] Check Pods Manifest.lock */,
+				4F595D1E2057EC3B00E3DB0A /* Sources */,
+				4F595D1F2057EC3B00E3DB0A /* Frameworks */,
+				4F595D202057EC3B00E3DB0A /* Resources */,
+				84E90988BC449E2AB9DCD581 /* [CP] Embed Pods Frameworks */,
+				95E2F660FC86B6E79F245318 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TRACKENDO;
+			productName = TRACKENDO;
+			productReference = 4F595D222057EC3B00E3DB0A /* TRACKENDO.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F595D352057EC3B00E3DB0A /* TRACKENDOTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F595D422057EC3B00E3DB0A /* Build configuration list for PBXNativeTarget "TRACKENDOTests" */;
+			buildPhases = (
+				6A98587FD3A287B46DA60ABE /* [CP] Check Pods Manifest.lock */,
+				4F595D322057EC3B00E3DB0A /* Sources */,
+				4F595D332057EC3B00E3DB0A /* Frameworks */,
+				4F595D342057EC3B00E3DB0A /* Resources */,
+				EA9C84C164081FB509430B1F /* [CP] Embed Pods Frameworks */,
+				917638BC1FF8899EE53AE0CC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F595D382057EC3B00E3DB0A /* PBXTargetDependency */,
+			);
+			name = TRACKENDOTests;
+			productName = TRACKENDOTests;
+			productReference = 4F595D362057EC3B00E3DB0A /* TRACKENDOTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F595D1A2057EC3B00E3DB0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Niklas Lindell";
+				TargetAttributes = {
+					4F595D212057EC3B00E3DB0A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					4F595D352057EC3B00E3DB0A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4F595D212057EC3B00E3DB0A;
+					};
+				};
+			};
+			buildConfigurationList = 4F595D1D2057EC3B00E3DB0A /* Build configuration list for PBXProject "TRACKENDO" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F595D192057EC3B00E3DB0A;
+			productRefGroup = 4F595D232057EC3B00E3DB0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F595D212057EC3B00E3DB0A /* TRACKENDO */,
+				4F595D352057EC3B00E3DB0A /* TRACKENDOTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F595D202057EC3B00E3DB0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F595D302057EC3B00E3DB0A /* LaunchScreen.storyboard in Resources */,
+				4F595D2D2057EC3B00E3DB0A /* Assets.xcassets in Resources */,
+				4F2465C52063A5C100CB09A2 /* GoogleService-Info.plist in Resources */,
+				4FD2D1402057EE60004CAF36 /* README.md in Resources */,
+				4F595D2B2057EC3B00E3DB0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F595D342057EC3B00E3DB0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A98587FD3A287B46DA60ABE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TRACKENDOTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7623A1425871D26C8DDF7802 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TRACKENDO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84E90988BC449E2AB9DCD581 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TRACKENDO/Pods-TRACKENDO-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TRACKENDO/Pods-TRACKENDO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		917638BC1FF8899EE53AE0CC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TRACKENDOTests/Pods-TRACKENDOTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95E2F660FC86B6E79F245318 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TRACKENDO/Pods-TRACKENDO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA9C84C164081FB509430B1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TRACKENDOTests/Pods-TRACKENDOTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TRACKENDOTests/Pods-TRACKENDOTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F595D1E2057EC3B00E3DB0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F79546520654D02000AF9A4 /* SignUpViewController.swift in Sources */,
+				4F595D282057EC3B00E3DB0A /* ListViewController.swift in Sources */,
+				4FD3F6C22066ACBD003A5484 /* AddWorkoutViewController.swift in Sources */,
+				4F79545F20654C24000AF9A4 /* LogInController.swift in Sources */,
+				4FF9D8F12063B24C0080B899 /* Workout.swift in Sources */,
+				4FB0389A2074F66300D06C0B /* IntervalTimerViewController.swift in Sources */,
+				4F79546120654C35000AF9A4 /* LogOutViewController.swift in Sources */,
+				4F595D262057EC3B00E3DB0A /* AppDelegate.swift in Sources */,
+				4F79546720655A76000AF9A4 /* WelcomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F595D322057EC3B00E3DB0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F595D3B2057EC3B00E3DB0A /* TRACKENDOTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F595D382057EC3B00E3DB0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F595D212057EC3B00E3DB0A /* TRACKENDO */;
+			targetProxy = 4F595D372057EC3B00E3DB0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F595D292057EC3B00E3DB0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F595D2A2057EC3B00E3DB0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4F595D2E2057EC3B00E3DB0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F595D2F2057EC3B00E3DB0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F595D3D2057EC3B00E3DB0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F595D3E2057EC3B00E3DB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F595D402057EC3B00E3DB0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F8B117003B8E9D2842A256 /* Pods-TRACKENDO.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TRACKENDO/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niklaslindell.TRACKENDO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F595D412057EC3B00E3DB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C10C48087FF6C55ED2F7FD99 /* Pods-TRACKENDO.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TRACKENDO/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niklaslindell.TRACKENDO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4F595D432057EC3B00E3DB0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD9A94213D23DCC840317C21 /* Pods-TRACKENDOTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TRACKENDOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niklaslindell.TRACKENDOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TRACKENDO.app/TRACKENDO";
+			};
+			name = Debug;
+		};
+		4F595D442057EC3B00E3DB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E53479FFB71CB3A93E0E6F3 /* Pods-TRACKENDOTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TRACKENDOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niklaslindell.TRACKENDOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TRACKENDO.app/TRACKENDO";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F595D1D2057EC3B00E3DB0A /* Build configuration list for PBXProject "TRACKENDO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F595D3D2057EC3B00E3DB0A /* Debug */,
+				4F595D3E2057EC3B00E3DB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F595D3F2057EC3B00E3DB0A /* Build configuration list for PBXNativeTarget "TRACKENDO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F595D402057EC3B00E3DB0A /* Debug */,
+				4F595D412057EC3B00E3DB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F595D422057EC3B00E3DB0A /* Build configuration list for PBXNativeTarget "TRACKENDOTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F595D432057EC3B00E3DB0A /* Debug */,
+				4F595D442057EC3B00E3DB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F595D1A2057EC3B00E3DB0A /* Project object */;
+}
