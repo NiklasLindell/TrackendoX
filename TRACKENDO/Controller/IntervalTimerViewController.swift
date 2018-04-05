@@ -29,7 +29,6 @@ class IntervalTimerViewController: UIViewController {
     var timer = Timer()
     var runTime = 0
     var restTime = 0
-    //var TotalSeconds = RunTime + RestTime
     var rounds = 1
     var pause = false
     var active = true
