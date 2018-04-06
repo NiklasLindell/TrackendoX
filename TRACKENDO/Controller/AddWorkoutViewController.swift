@@ -6,6 +6,8 @@ class AddWorkoutViewController: UIViewController {
     
     var workoutList : [Workout]?
     
+    @IBOutlet weak var addTableView: UITableView!
+    
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var exerciseTextField: UITextField!
@@ -13,20 +15,20 @@ class AddWorkoutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-     
+    }
+    @IBAction func addExerciseButton(_ sender: UIButton) {
+       
     }
     
-//    @IBAction func savePressed(_ sender: UIButton) {
-//
-//        let workOut = Workout(title: titleTextField.text!, exercise: exerciseTextField.text!))
-//
-//        workoutList?.append(workOut)
-//
-//        createAlertAdd(title: "Saved", message: "Your workout has been saved")
-//
-//
-//    }
+    
+    @IBAction func savePressed(_ sender: UIButton) {
+
+        let workOut = Workout(title: titleTextField.text!, exercises: exerciseTextField.text!)
+
+        workoutList?.append(workOut)
+
+        createAlertAdd(title: "Saved", message: "Your workout has been saved")
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
@@ -39,13 +41,7 @@ class AddWorkoutViewController: UIViewController {
             destination.workoutList = self.workoutList
         }
    }
-
-    
   
-    
- 
-    
-    
 
     // Skapar ett alert message för att säga att datan är sparad
     func createAlertAdd(title: String, message:String ){
@@ -59,4 +55,15 @@ class AddWorkoutViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 

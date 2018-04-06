@@ -17,6 +17,7 @@
 		4F595D2D2057EC3B00E3DB0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F595D2C2057EC3B00E3DB0A /* Assets.xcassets */; };
 		4F595D302057EC3B00E3DB0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F595D2E2057EC3B00E3DB0A /* LaunchScreen.storyboard */; };
 		4F595D3B2057EC3B00E3DB0A /* TRACKENDOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F595D3A2057EC3B00E3DB0A /* TRACKENDOTests.swift */; };
+		4F5A4D1720765CF800F12A3D /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A4D1620765CF800F12A3D /* Exercise.swift */; };
 		4F79545F20654C24000AF9A4 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79545E20654C24000AF9A4 /* LogInController.swift */; };
 		4F79546120654C35000AF9A4 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79546020654C35000AF9A4 /* LogOutViewController.swift */; };
 		4F79546520654D02000AF9A4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79546420654D02000AF9A4 /* SignUpViewController.swift */; };
@@ -51,6 +52,7 @@
 		4F595D362057EC3B00E3DB0A /* TRACKENDOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRACKENDOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F595D3A2057EC3B00E3DB0A /* TRACKENDOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRACKENDOTests.swift; sourceTree = "<group>"; };
 		4F595D3C2057EC3B00E3DB0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F5A4D1620765CF800F12A3D /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		4F79545E20654C24000AF9A4 /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		4F79546020654C35000AF9A4 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		4F79546420654D02000AF9A4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF9D8F02063B24C0080B899 /* Workout.swift */,
+				4F5A4D1620765CF800F12A3D /* Exercise.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				4FD3F6C22066ACBD003A5484 /* AddWorkoutViewController.swift in Sources */,
 				4F79545F20654C24000AF9A4 /* LogInController.swift in Sources */,
 				4FF9D8F12063B24C0080B899 /* Workout.swift in Sources */,
+				4F5A4D1720765CF800F12A3D /* Exercise.swift in Sources */,
 				4FB0389A2074F66300D06C0B /* IntervalTimerViewController.swift in Sources */,
 				4F79546120654C35000AF9A4 /* LogOutViewController.swift in Sources */,
 				4F595D262057EC3B00E3DB0A /* AppDelegate.swift in Sources */,
