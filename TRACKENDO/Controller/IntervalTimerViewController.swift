@@ -68,6 +68,11 @@ class IntervalTimerViewController: UIViewController {
     @IBAction func StartBtn(_ sender: Any) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(IntervalTimerViewController.counter), userInfo: nil, repeats: true)
         startOutlet.isEnabled = false
+        if runTime > 0{
+        handleTapRun()
+        } else {
+            handleTapRest()
+        }
     }
     
     //countdown timer
@@ -77,7 +82,7 @@ class IntervalTimerViewController: UIViewController {
             totalTime.text = String((runTime + restTime) * rounds)
             if runTime > 0 {
                 runVSrestLbl.text = "RUN"
-                //runVSrestLbl.text = (UIColor.green.cgColor as! String)
+                shapeLayer.strokeColor = UIColor.green.cgColor
                 timeLbl.text = String(runTime)
                 runTime -= 1
                 //audioPlayer.play()
@@ -85,7 +90,7 @@ class IntervalTimerViewController: UIViewController {
             }
             else if (runTime == 0 && restTime > 0){
                 runVSrestLbl.text = "REST"
-                //runVSrestLbl.text = (UIColor.red.cgColor as! String)
+                shapeLayer.strokeColor = UIColor.red.cgColor
                 timeLbl.text = String(restTime)
                 restTime -= 1
                 //audioPlayer.play()
@@ -162,20 +167,13 @@ class IntervalTimerViewController: UIViewController {
         //ritar in det i min view
         view.layer.addSublayer(trackLayer)
         
-        
         shapeLayer.path = circularPath.cgPath
-        
-        //färgen på strecket som går runt
-        shapeLayer.strokeColor = UIColor.green.cgColor
         
         //tjockleken på strecket
         shapeLayer.lineWidth = 5
         
         //färgen på cirkeln innanför strecket
         shapeLayer.fillColor = UIColor.clear.cgColor
-        
-        //gör så att linjen blir rundad i början och slutet
-        //shapeLayer.lineCap = kCALineCapRound
         
         //strecket försvinner med den här
         shapeLayer.strokeEnd = 0
@@ -184,12 +182,11 @@ class IntervalTimerViewController: UIViewController {
         view.layer.addSublayer(shapeLayer)
         
         //cirkeln startas när man trycker på skärmen, med vår handletap func
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        //view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         
         runTime = Int((runSliderOutlet.maximumValue - runSliderOutlet.minimumValue) * 0.5)
         restTime = Int((restSliderOutlet.maximumValue - restSliderOutlet.minimumValue) * 0.5)
         rounds = Int((roundSliderOutlet.maximumValue - roundSliderOutlet.minimumValue) * 0.5)
-        
         
         do {
             let audioPath = Bundle.main.path(forResource: "alarm", ofType: ".mp3")
@@ -199,7 +196,7 @@ class IntervalTimerViewController: UIViewController {
         }
         
     }
-    @objc private func handleTap(){
+    func handleTapRun(){
         print("animate")
         
         //börjar animera och använder strokeEnd så att den börjar röras
@@ -209,18 +206,42 @@ class IntervalTimerViewController: UIViewController {
         basicAnimation.toValue = 1
         
         //det här är hur snabbt cirkeln ska gå runt
-        basicAnimation.duration = 5
+        basicAnimation.duration = CFTimeInterval(runTime)
         
         //dessa två gör att animationen stannar så när den är ifylld
         basicAnimation.fillMode = kCAFillModeForwards
-        basicAnimation.isRemovedOnCompletion = false
+        basicAnimation.isRemovedOnCompletion = true
         
         //adderar animationen
         shapeLayer.add(basicAnimation, forKey: "basic")
         
     }
     
- 
+    func handleTapRest(){
+        print("animate")
+        
+        //börjar animera och använder strokeEnd så att den börjar röras
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        
+        //här går den från strokeEnd(0) till toValue(1)
+        basicAnimation.toValue = 1
+        
+        //det här är hur snabbt cirkeln ska gå runt
+        basicAnimation.duration = CFTimeInterval(restTime)
+        
+        
+        
+        //dessa två gör att animationen stannar så när den är ifylld
+        basicAnimation.fillMode = kCAFillModeForwards
+        basicAnimation.isRemovedOnCompletion = true
+        
+        //adderar animationen
+        shapeLayer.add(basicAnimation, forKey: "basic")
+        
+    }
+    
+    
+    
     
     
     
