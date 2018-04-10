@@ -78,6 +78,7 @@ class IntervalTimerViewController: UIViewController {
             totalTime.text = String((runTime + restTime) * rounds)
             if runTime > 0 {
                 runVSrestLbl.text = "RUN"
+                //runVSrestLbl.text = (UIColor.green.cgColor as! String)
                 timeLbl.text = String(runTime)
                 runTime -= 1
                 //audioPlayer.play()
@@ -85,6 +86,7 @@ class IntervalTimerViewController: UIViewController {
             }
             else if (runTime == 0 && restTime > 0){
                 runVSrestLbl.text = "REST"
+                //runVSrestLbl.text = (UIColor.red.cgColor as! String)
                 timeLbl.text = String(restTime)
                 restTime -= 1
                 //audioPlayer.play()
