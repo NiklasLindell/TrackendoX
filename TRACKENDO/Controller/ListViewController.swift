@@ -69,12 +69,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 //     skickar över listan från denna sida till add-sidan så att dem är samma
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == segueID) {
-            let destination = segue.destination as! AddWorkoutViewController
-            destination.workoutList = self.workoutList
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if (segue.identifier == segueID) {
+//            let destination = segue.destination as! AddWorkoutViewController
+////            destination.workoutList = self.workoutList
+//        }
+//    }
     
 }
 

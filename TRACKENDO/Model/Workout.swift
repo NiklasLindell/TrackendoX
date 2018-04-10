@@ -4,7 +4,7 @@ import Firebase
 class Workout {
     
     var title: String
-    var exercises: [Exercise]
+    var exercises: [String]
     
     init(title: String) {
         self.title = title
