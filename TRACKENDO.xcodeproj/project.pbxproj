@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0FC5C37ED6641127E1736715 /* Pods_TRACKENDOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF8985FEC0221AA970E45BC /* Pods_TRACKENDOTests.framework */; };
-		45A0B3D5207CD9EE00E44AE0 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0B3D4207CD9EE00E44AE0 /* ProgressCircle.swift */; };
 		45D1EA5D207637050061444F /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D1EA5C207637050061444F /* alarm.mp3 */; };
 		45E003D3207A0A0A0035E85C /* 1beepAlarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E003D1207A0A0A0035E85C /* 1beepAlarm.mp3 */; };
 		45E003D4207A0A0A0035E85C /* 5beepAlarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E003D2207A0A0A0035E85C /* 5beepAlarm.mp3 */; };
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		0E53479FFB71CB3A93E0E6F3 /* Pods-TRACKENDOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRACKENDOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRACKENDOTests/Pods-TRACKENDOTests.release.xcconfig"; sourceTree = "<group>"; };
-		45A0B3D4207CD9EE00E44AE0 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		45D1EA5C207637050061444F /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		45E003D1207A0A0A0035E85C /* 1beepAlarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1beepAlarm.mp3; sourceTree = "<group>"; };
 		45E003D2207A0A0A0035E85C /* 5beepAlarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5beepAlarm.mp3; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */,
 				4F79546020654C35000AF9A4 /* LogOutViewController.swift */,
 				4FB038992074F66200D06C0B /* IntervalTimerViewController.swift */,
-				45A0B3D4207CD9EE00E44AE0 /* ProgressCircle.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -432,7 +429,6 @@
 				4F79545F20654C24000AF9A4 /* LogInController.swift in Sources */,
 				4FF9D8F12063B24C0080B899 /* Workout.swift in Sources */,
 				4FB0389A2074F66300D06C0B /* IntervalTimerViewController.swift in Sources */,
-				45A0B3D5207CD9EE00E44AE0 /* ProgressCircle.swift in Sources */,
 				4F79546120654C35000AF9A4 /* LogOutViewController.swift in Sources */,
 				4F595D262057EC3B00E3DB0A /* AppDelegate.swift in Sources */,
 				4F79546720655A76000AF9A4 /* WelcomeViewController.swift in Sources */,
