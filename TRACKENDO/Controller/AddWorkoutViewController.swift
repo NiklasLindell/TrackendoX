@@ -14,6 +14,10 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var exerciseTextField: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let wo = workout {
@@ -25,15 +29,22 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.textColor = UIColor.white
+        
         cell.textLabel?.text = workout?.exercises[indexPath.row]
         
         return cell
         
     }
-
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // gör så att man kan radera en rad i tableviewn genom att swipa med fingret
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            workout?.exercises.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
     }
     
     @IBAction func addExerciseButton(_ sender: UIButton) {
