@@ -1,10 +1,11 @@
 import UIKit
+import Firebase
 
 class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
     let segueID = "goToTableView"
     
-    //var workoutList : [Workout]?
+    var workoutList : [Workout]?
     
     var workout : Workout?
     
@@ -18,6 +19,7 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
     }
     
+     // hur många rader det ska vara i tableviewn
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let wo = workout {
@@ -27,6 +29,7 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+     // vad som ska synas i varje rad i tableviewn
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -47,6 +50,26 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+    // gör så att markeringen när man trycker på en rad bara blinkar till
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
+    @IBAction func edit(_ sender: UIButton) {
+        addTableView.isEditing = !addTableView.isEditing
+    }
+    
+    // gör så att man kan ändra ordningen på exercises när man skapar passet
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let item = workout?.exercises[sourceIndexPath.row]
+        workout?.exercises.remove(at: sourceIndexPath.row)
+        workout?.exercises.insert(item!, at: destinationIndexPath.row)
+    }
+    
     @IBAction func addExerciseButton(_ sender: UIButton) {
             
         if workout == nil {
@@ -56,32 +79,29 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
        workout?.exercises.append(exerciseTextField.text!)
         
         addTableView.reloadData()
-
-        
-       
     }
     
     
-//    @IBAction func savePressed(_ sender: UIButton) {
-//
-//        let workOut = Workout(title: titleTextField.text!, exercises: exerciseTextField.text!)
-//
-//        workoutList?.append(workOut)
-//
-//        createAlertAdd(title: "Saved", message: "Your workout has been saved")
-//    }
+    @IBAction func savePressed(_ sender: UIButton) {
+
+        let workOut = Workout(title: titleTextField.text!)
+
+        workoutList?.append(workOut)
+
+        createAlertAdd(title: "Saved", message: "Your workout has been saved")
+    }
     
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
-//
-//        print("prep for segue")
-//
-//        if (segue.identifier == segueID) {
-//
-//            let destination = segue.destination as! ListViewController
-//            destination.workoutList = self.workoutList
-//        }
-//   }
+    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
+
+        print("prep for segue")
+
+        if (segue.identifier == segueID) {
+
+            let destination = segue.destination as! ListViewController
+            destination.workoutList = self.workoutList
+        }
+   }
   
 
     // Skapar ett alert message för att säga att datan är sparad

@@ -40,10 +40,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     // vad som ska synas i varje rad i tableviewn
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        
         if let workout = workoutList {
             cell.textLabel?.text = workout[indexPath.row].title
         }
+        cell.textLabel?.textColor = UIColor.white
         return cell
     }
     
@@ -56,25 +58,21 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    // lägger till ett checkmark vid högra sidan i tableviewn om man klickar på den och tar bort om man klickar igen
+    // Skickar över data till ShowWorkout om man klickar på en titel
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let workOut = workoutList?[indexPath.row]
+        performSegue(withIdentifier: "goToShowWorkout", sender: workOut)
         
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    
 //     skickar över listan från denna sida till add-sidan så att dem är samma
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if (segue.identifier == segueID) {
-//            let destination = segue.destination as! AddWorkoutViewController
-////            destination.workoutList = self.workoutList
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == segueID) {
+            let destination = segue.destination as! AddWorkoutViewController
+            destination.workoutList = self.workoutList
+        }
+    }
     
 }
 

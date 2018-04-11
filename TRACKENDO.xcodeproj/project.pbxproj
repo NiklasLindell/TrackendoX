@@ -12,6 +12,7 @@
 		45E003D3207A0A0A0035E85C /* 1beepAlarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E003D1207A0A0A0035E85C /* 1beepAlarm.mp3 */; };
 		45E003D4207A0A0A0035E85C /* 5beepAlarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E003D2207A0A0A0035E85C /* 5beepAlarm.mp3 */; };
 		4F0C45CB0B61DE5BFBD29059 /* Pods_TRACKENDO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546F4BFB391FA18F594A7D30 /* Pods_TRACKENDO.framework */; };
+		4F2430CE207E2FB7006CAEA9 /* ShowWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2430CD207E2FB7006CAEA9 /* ShowWorkout.swift */; };
 		4F2465C52063A5C100CB09A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F2465C42063A5C100CB09A2 /* GoogleService-Info.plist */; };
 		4F595D262057EC3B00E3DB0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F595D252057EC3B00E3DB0A /* AppDelegate.swift */; };
 		4F595D282057EC3B00E3DB0A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F595D272057EC3B00E3DB0A /* ListViewController.swift */; };
@@ -44,6 +45,7 @@
 		45D1EA5C207637050061444F /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		45E003D1207A0A0A0035E85C /* 1beepAlarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1beepAlarm.mp3; sourceTree = "<group>"; };
 		45E003D2207A0A0A0035E85C /* 5beepAlarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5beepAlarm.mp3; sourceTree = "<group>"; };
+		4F2430CD207E2FB7006CAEA9 /* ShowWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWorkout.swift; sourceTree = "<group>"; };
 		4F2465C42063A5C100CB09A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F595D222057EC3B00E3DB0A /* TRACKENDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRACKENDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F595D252057EC3B00E3DB0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				4F79546620655A76000AF9A4 /* WelcomeViewController.swift */,
 				4F595D272057EC3B00E3DB0A /* ListViewController.swift */,
 				4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */,
+				4F2430CD207E2FB7006CAEA9 /* ShowWorkout.swift */,
 				4F79546020654C35000AF9A4 /* LogOutViewController.swift */,
 				4FB038992074F66200D06C0B /* IntervalTimerViewController.swift */,
 			);
@@ -427,6 +430,7 @@
 				4F595D282057EC3B00E3DB0A /* ListViewController.swift in Sources */,
 				4FD3F6C22066ACBD003A5484 /* AddWorkoutViewController.swift in Sources */,
 				4F79545F20654C24000AF9A4 /* LogInController.swift in Sources */,
+				4F2430CE207E2FB7006CAEA9 /* ShowWorkout.swift in Sources */,
 				4FF9D8F12063B24C0080B899 /* Workout.swift in Sources */,
 				4FB0389A2074F66300D06C0B /* IntervalTimerViewController.swift in Sources */,
 				4F79546120654C35000AF9A4 /* LogOutViewController.swift in Sources */,
