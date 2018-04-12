@@ -17,6 +17,7 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         workout = Workout()
     }
     
      // hur många rader det ska vara i tableviewn
@@ -71,10 +72,6 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func addExerciseButton(_ sender: UIButton) {
-            
-        if workout == nil {
-            workout = Workout(title: titleTextField.text!)
-        }
         
        workout?.exercises.append(exerciseTextField.text!)
         
@@ -84,9 +81,8 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBAction func savePressed(_ sender: UIButton) {
 
-        let workOut = Workout(title: titleTextField.text!)
-
-        workoutList?.append(workOut)
+        workout?.title = titleTextField.text!
+        workoutList?.append(workout!)
 
         createAlertAdd(title: "Saved", message: "Your workout has been saved")
     }
