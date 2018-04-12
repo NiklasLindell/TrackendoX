@@ -37,7 +37,7 @@ class IntervalTimerViewController: UIViewController {
     //slidern som ändrar "run" sekundrarna
     @IBAction func runSlider(_ sender: UISlider) {
         runTime = Int(sender.value)
-        runTextField.text = String(runTime)
+        runTextField.text = "Run: " + String(runTime) + " sec"
         totalTime.text = String((runTime + restTime) * rounds) + " sec"
         if runTime + restTime * rounds >= 60 {
             totalTime.text = String((runTime + restTime) * rounds) + " min"
@@ -47,7 +47,7 @@ class IntervalTimerViewController: UIViewController {
     //slidern som ändrar "rest" sekundrarna
     @IBAction func restSlider(_ sender: UISlider) {
         restTime = Int(sender.value)
-        restTextField.text = String(restTime)
+        restTextField.text = "Rest: " + String(restTime) + " sec"
         totalTime.text = String((runTime + restTime) * rounds) + " sec"
         if runTime + restTime * rounds >= 60 {
             totalTime.text = String((runTime + restTime) * rounds) + " min"
@@ -57,7 +57,7 @@ class IntervalTimerViewController: UIViewController {
     //slidern som ändrar antal rundor
     @IBAction func roundSlider(_ sender: UISlider) {
         rounds = Int(sender.value)
-        roundsTextField.text = String(rounds)
+        roundsTextField.text = String(rounds) + " rounds"
         totalTime.text = String((runTime + restTime) * rounds) + " sec"
         if runTime + restTime * rounds >= 60 {
             totalTime.text = String((runTime + restTime) * rounds) + " min"
@@ -80,28 +80,30 @@ class IntervalTimerViewController: UIViewController {
         if rounds > 0 {
             
             totalTime.text = String((runTime + restTime) * rounds)
-            if runTime > 0 {
+            if runTime >= 0 {
                 runVSrestLbl.text = "RUN"
                 shapeLayer.strokeColor = UIColor.green.cgColor
                 timeLbl.text = String(runTime)
                 runTime -= 1
-                //audioPlayer.play()
                 
             }
-            else if (runTime == 0 && restTime > 0){
+            else if (runTime <= 0 && restTime > 0){
                 runVSrestLbl.text = "REST"
                 shapeLayer.strokeColor = UIColor.red.cgColor
                 timeLbl.text = String(restTime)
                 restTime -= 1
-                //audioPlayer.play()
                 
             }
-            else if (runTime == 0 && restTime == 0) {
+            else if (runTime <= 0 && restTime <= 0) {
                 rounds -= 1
                 runTime = Int(runSliderOutlet.value)
                 restTime = Int(restSliderOutlet.value)
                 
             }
+            else if (runTime == 0 || restTime == 0){
+                audioPlayer.play()
+            }
+                
             else if (runTime == 0 && restTime == 0 && rounds == 0){
                 audioPlayer.play()
                 timeLbl.text = "0"
@@ -127,7 +129,7 @@ class IntervalTimerViewController: UIViewController {
         timeLbl.text = "0"
         runVSrestLbl.text = "Activity"
         
-        audioPlayer.stop()
+        //audioPlayer.stop()
         
         startOutlet.isEnabled = true
     }
@@ -189,7 +191,7 @@ class IntervalTimerViewController: UIViewController {
         rounds = Int((roundSliderOutlet.maximumValue - roundSliderOutlet.minimumValue) * 0.5)
         
         do {
-            let audioPath = Bundle.main.path(forResource: "alarm", ofType: ".mp3")
+            let audioPath = Bundle.main.path(forResource: "1beepAlarm", ofType: ".mp3")
             try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
         } catch{
             //ERROR
