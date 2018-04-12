@@ -3,7 +3,6 @@ import Firebase
 
 class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
     var workout : Workout?
     
     override func viewDidLoad() {

@@ -74,6 +74,7 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     @IBAction func addExerciseButton(_ sender: UIButton) {
         
        workout?.exercises.append(exerciseTextField.text!)
+        exerciseTextField.text? = ""
         
         addTableView.reloadData()
     }
