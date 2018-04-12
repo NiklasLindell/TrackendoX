@@ -87,14 +87,14 @@ class IntervalTimerViewController: UIViewController {
                 runTime -= 1
                 
             }
-            else if (runTime <= 0 && restTime > 0){
+            else if (restTime >= 0){
                 runVSrestLbl.text = "REST"
                 shapeLayer.strokeColor = UIColor.red.cgColor
                 timeLbl.text = String(restTime)
                 restTime -= 1
                 
             }
-            else if (runTime <= 0 && restTime <= 0) {
+            else if (runTime == 0 && restTime == 0) {
                 rounds -= 1
                 runTime = Int(runSliderOutlet.value)
                 restTime = Int(restSliderOutlet.value)
@@ -212,7 +212,7 @@ class IntervalTimerViewController: UIViewController {
         
         //dessa två gör att animationen stannar så när den är ifylld
         basicAnimation.fillMode = kCAFillModeForwards
-        basicAnimation.isRemovedOnCompletion = true
+        basicAnimation.isRemovedOnCompletion = false
         
         //adderar animationen
         shapeLayer.add(basicAnimation, forKey: "basic")
@@ -235,7 +235,7 @@ class IntervalTimerViewController: UIViewController {
         
         //dessa två gör att animationen stannar så när den är ifylld
         basicAnimation.fillMode = kCAFillModeForwards
-        basicAnimation.isRemovedOnCompletion = true
+        basicAnimation.isRemovedOnCompletion = false
         
         //adderar animationen
         shapeLayer.add(basicAnimation, forKey: "basic")
