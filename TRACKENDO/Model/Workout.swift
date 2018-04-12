@@ -6,8 +6,8 @@ class Workout {
     var title: String
     var exercises: [String]
     
-    init(title: String) {
-        self.title = title
+    init() {
+        self.title = ""
         self.exercises = []
     }    
 }

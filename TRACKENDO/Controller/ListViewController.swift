@@ -3,9 +3,11 @@ import Firebase
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let segueID = "goToAdd"
+    let segueToShow = "goToShowWorkout"
+    let segueToAdd = "goToAdd"
     var workoutList : [Workout]?
     let cellID = "cellIdentifier"
+    var selectedWorkout : Workout?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -60,17 +62,22 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Skickar över data till ShowWorkout om man klickar på en titel
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let workOut = workoutList?[indexPath.row]
-        performSegue(withIdentifier: "goToShowWorkout", sender: workOut)
+        selectedWorkout = (workoutList?[indexPath.row])!
+        
+        performSegue(withIdentifier: segueToShow, sender: self)
         
     }
     
     
 //     skickar över listan från denna sida till add-sidan så att dem är samma
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == segueID) {
+        if (segue.identifier == segueToAdd) {
             let destination = segue.destination as! AddWorkoutViewController
             destination.workoutList = self.workoutList
+        } else if (segue.identifier == segueToShow) {
+             let destination = segue.destination as! ShowWorkout
+            destination.workout =  selectedWorkout!
+            
         }
     }
     
