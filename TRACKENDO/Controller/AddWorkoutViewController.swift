@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
   
     let segueID = "goToTableView"
     
@@ -17,7 +17,10 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         workout = Workout()
+        
+        self.titleTextField.delegate = self
+        self.exerciseTextField.delegate = self
+        workout = Workout()
     }
     
      // hur många rader det ska vara i tableviewn
@@ -55,10 +58,13 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
+
+    @IBOutlet weak var editLable: UIButton!
     
     @IBAction func edit(_ sender: UIButton) {
         addTableView.isEditing = !addTableView.isEditing
+        editLable.setTitle("Done", for: .normal)
+        
     }
     
     // gör så att man kan ändra ordningen på exercises när man skapar passet
@@ -74,6 +80,7 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     @IBAction func addExerciseButton(_ sender: UIButton) {
         
        workout?.exercises.append(exerciseTextField.text!)
+        exerciseTextField.text? = ""
         
         addTableView.reloadData()
     }
@@ -98,6 +105,17 @@ class AddWorkoutViewController: UIViewController, UITableViewDataSource, UITable
             destination.workoutList = self.workoutList
         }
    }
+    
+    // tar bort tangentbordet när man klickar någonstans utanför det
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // tar bort tangentbordet när man klicka på return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return(true)
+    }
   
 
     // Skapar ett alert message för att säga att datan är sparad

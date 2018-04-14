@@ -14,9 +14,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = true
-   
         if (workoutList == nil) {
             workoutList = []
         }
