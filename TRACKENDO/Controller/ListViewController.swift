@@ -16,6 +16,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         if (workoutList == nil) {
             workoutList = []
+            
         }
         tableView?.reloadData()
         

@@ -101,6 +101,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		45FD3E192082842F006D8348 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				45D1EA5C207637050061444F /* alarm.mp3 */,
+				45E003D1207A0A0A0035E85C /* 1beepAlarm.mp3 */,
+				45E003D2207A0A0A0035E85C /* 5beepAlarm.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		4F595D192057EC3B00E3DB0A = {
 			isa = PBXGroup;
 			children = (
@@ -130,9 +140,7 @@
 				4F79545D20654BBE000AF9A4 /* View */,
 				4F79545C20654BBC000AF9A4 /* Controller */,
 				4F595D2C2057EC3B00E3DB0A /* Assets.xcassets */,
-				45D1EA5C207637050061444F /* alarm.mp3 */,
-				45E003D1207A0A0A0035E85C /* 1beepAlarm.mp3 */,
-				45E003D2207A0A0A0035E85C /* 5beepAlarm.mp3 */,
+				45FD3E192082842F006D8348 /* Sounds */,
 				4F595D312057EC3B00E3DB0A /* Info.plist */,
 			);
 			path = TRACKENDO;

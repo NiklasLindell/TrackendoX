@@ -15,6 +15,7 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     
     @IBOutlet weak var exerciseTextField: UITextField!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,6 +93,11 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         workoutList?.append(workout!)
 
         createAlertAdd(title: "Saved", message: "Your workout has been saved")
+        
+        let workoutDB = Database.database().reference().child("Excercises")
+        let workoutDictionary = ["Sender": Auth.auth().currentUser?.email, "workoutBody": titleTextField.text]
+        
+        workoutDB.childByAutoId().setValue(workoutDictionary)
     }
     
     
@@ -129,6 +135,20 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+//    func Alert(title: String, message: String){
+//    let refreshAlert = UIAlertController(title: "Warning!", message: "All data will be lost if you go back without saving first.", preferredStyle: UIAlertControllerStyle.alert)
+//
+//    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+//    print("Handle Ok logic here")
+//    }))
+//
+//    refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+//    print("Handle Cancel Logic here")
+//    }))
+//
+//    present(refreshAlert, animated: true, completion: nil)
+//}
 }
 
 
