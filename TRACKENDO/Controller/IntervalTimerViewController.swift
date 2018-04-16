@@ -35,6 +35,17 @@ class IntervalTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startOutlet.layer.cornerRadius = 0.5 * startOutlet.bounds.size.height
+        stopOutlet.layer.cornerRadius = 0.5 * stopOutlet.bounds.size.height
+        pauseOutlet.layer.cornerRadius = 0.5 * stopOutlet.bounds.size.height
+        startOutlet.layer.borderColor = UIColor.white.cgColor
+        stopOutlet.layer.borderColor = UIColor.white.cgColor
+        pauseOutlet.layer.borderColor = UIColor.white.cgColor
+        startOutlet.layer.borderWidth = 1
+        stopOutlet.layer.borderWidth = 1
+        pauseOutlet.layer.borderWidth = 1
+        
+        
 //        runTime = Int((runSliderOutlet.maximumValue - runSliderOutlet.minimumValue) * 0.5)
 //        restTime = Int((restSliderOutlet.maximumValue - restSliderOutlet.minimumValue) * 0.5)
 //        rounds = Int((roundSliderOutlet.maximumValue - roundSliderOutlet.minimumValue) * 0.5)

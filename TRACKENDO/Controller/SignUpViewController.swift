@@ -9,9 +9,11 @@ class SignUpViewController: UIViewController{
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var signUpStyle: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
+        signUpStyle.layer.cornerRadius = 20
 
     }
     

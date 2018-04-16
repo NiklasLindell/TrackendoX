@@ -27,6 +27,7 @@
 		4FB0389A2074F66300D06C0B /* IntervalTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB038992074F66200D06C0B /* IntervalTimerViewController.swift */; };
 		4FD2D1402057EE60004CAF36 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4FD2D13F2057EE60004CAF36 /* README.md */; };
 		4FD3F6C22066ACBD003A5484 /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */; };
+		4FF066282084F6CB001BB5DB /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF066272084F6CB001BB5DB /* ResetPassword.swift */; };
 		4FF9D8F12063B24C0080B899 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9D8F02063B24C0080B899 /* Workout.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		4FB038992074F66200D06C0B /* IntervalTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerViewController.swift; sourceTree = "<group>"; };
 		4FD2D13F2057EE60004CAF36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
+		4FF066272084F6CB001BB5DB /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		4FF9D8F02063B24C0080B899 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		546F4BFB391FA18F594A7D30 /* Pods_TRACKENDO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TRACKENDO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF8985FEC0221AA970E45BC /* Pods_TRACKENDOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TRACKENDOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +170,7 @@
 			children = (
 				4F595D252057EC3B00E3DB0A /* AppDelegate.swift */,
 				4F79545E20654C24000AF9A4 /* LogInController.swift */,
+				4FF066272084F6CB001BB5DB /* ResetPassword.swift */,
 				4F79546420654D02000AF9A4 /* SignUpViewController.swift */,
 				4F79546620655A76000AF9A4 /* WelcomeViewController.swift */,
 				4F595D272057EC3B00E3DB0A /* ListViewController.swift */,
@@ -439,6 +442,7 @@
 				4FD3F6C22066ACBD003A5484 /* AddWorkoutViewController.swift in Sources */,
 				4F79545F20654C24000AF9A4 /* LogInController.swift in Sources */,
 				4F2430CE207E2FB7006CAEA9 /* ShowWorkout.swift in Sources */,
+				4FF066282084F6CB001BB5DB /* ResetPassword.swift in Sources */,
 				4FF9D8F12063B24C0080B899 /* Workout.swift in Sources */,
 				4FB0389A2074F66300D06C0B /* IntervalTimerViewController.swift in Sources */,
 				4F79546120654C35000AF9A4 /* LogOutViewController.swift in Sources */,

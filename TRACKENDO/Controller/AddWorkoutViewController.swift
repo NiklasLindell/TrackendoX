@@ -5,7 +5,7 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
   
     let segueID = "goToTableView"
     
-    var workoutList : [Workout]?
+    var workoutList : [Workout]? 
     
     var workout : Workout?
     
@@ -15,12 +15,22 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     
     @IBOutlet weak var exerciseTextField: UITextField!
     
-
+    @IBOutlet weak var addExerciseStyle: UIButton!
+    
+    @IBOutlet weak var editStyle: UIButton!
+    
+    @IBOutlet weak var saveStyle: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addExerciseStyle.layer.cornerRadius = 20
+        editStyle.layer.cornerRadius = 20
+        saveStyle.layer.cornerRadius = 20
+        
+        
         self.titleTextField.delegate = self
         self.exerciseTextField.delegate = self
+       
         workout = Workout()
     }
     
@@ -94,10 +104,20 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
 
         createAlertAdd(title: "Saved", message: "Your workout has been saved")
         
-        let workoutDB = Database.database().reference().child("Excercises")
-        let workoutDictionary = ["Sender": Auth.auth().currentUser?.email, "workoutBody": titleTextField.text]
+        let workoutDB = Database.database().reference().child("Workouts")
+        let workoutDictionary = ["Sender": Auth.auth().currentUser?.email, "Exercises": titleTextField.text]
         
-        workoutDB.childByAutoId().setValue(workoutDictionary)
+        workoutDB.childByAutoId().setValue(workoutDictionary){
+            (error, ref) in
+            
+            if error != nil {
+                print(error)
+            } else {
+                print("Workout saved")
+            }
+        }
+        
+    
     }
     
     
