@@ -46,6 +46,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.textLabel?.text = workout[indexPath.row].title
         }
         cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.font = UIFont(name:"Copperplate", size:25)
         return cell
     }
     
