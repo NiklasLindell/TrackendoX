@@ -8,7 +8,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var workoutList : [Workout]?
     let cellID = "cellIdentifier"
     var selectedWorkout : Workout?
-
+    
     @IBOutlet weak var tableView: UITableView!
     
 
@@ -19,6 +19,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
         tableView?.reloadData()
+        
+        
         
     }
     

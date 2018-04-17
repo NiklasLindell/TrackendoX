@@ -113,9 +113,8 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         exerciseTextField.text = ""
         
         let workoutDB = Database.database().reference().child("Workouts")
-        let workoutDictionary = ["Sender": Auth.auth().currentUser?.email, "Exercises": titleTextField.text]
         
-        workoutDB.childByAutoId().setValue(workoutDictionary){
+        workoutDB.childByAutoId().setValue(workout?.toAnyObject()){
             (error, ref) in
             
             if error != nil {
