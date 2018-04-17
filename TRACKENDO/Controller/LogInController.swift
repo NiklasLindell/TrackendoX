@@ -8,7 +8,6 @@ class LogInController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
     @IBOutlet weak var logInStyle: UIButton!
     
     @IBOutlet weak var signUpStyle: UIButton!

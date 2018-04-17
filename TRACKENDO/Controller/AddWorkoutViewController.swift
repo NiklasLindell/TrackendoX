@@ -49,6 +49,8 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.font = UIFont(name: (cell.textLabel?.font.fontName)!, size:20)
+        
         
         cell.textLabel?.text = workout?.exercises[indexPath.row]
         
@@ -74,8 +76,13 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     
     @IBAction func edit(_ sender: UIButton) {
         addTableView.isEditing = !addTableView.isEditing
-        editLable.setTitle("Done", for: .normal)
+        if sender.currentTitle == "Edit" {
+            editLable.setTitle("Done", for: .normal)
+        } else {
+            editLable.setTitle("Edit", for: .normal)
+        }
         
+    
     }
     
     // gör så att man kan ändra ordningen på exercises när man skapar passet
@@ -103,6 +110,8 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         workoutList?.append(workout!)
 
         createAlertAdd(title: "Saved", message: "Your workout has been saved")
+        titleTextField.text = ""
+        exerciseTextField.text = ""
         
         let workoutDB = Database.database().reference().child("Workouts")
         let workoutDictionary = ["Sender": Auth.auth().currentUser?.email, "Exercises": titleTextField.text]
@@ -156,7 +165,8 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         self.present(alert, animated: true, completion: nil)
     }
     
-//    func Alert(title: String, message: String){
+    
+//    func Alert(){
 //    let refreshAlert = UIAlertController(title: "Warning!", message: "All data will be lost if you go back without saving first.", preferredStyle: UIAlertControllerStyle.alert)
 //
 //    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
@@ -168,7 +178,7 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
 //    }))
 //
 //    present(refreshAlert, animated: true, completion: nil)
-//}
+//    }
 }
 
 

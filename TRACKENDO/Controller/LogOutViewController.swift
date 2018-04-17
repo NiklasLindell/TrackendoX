@@ -2,28 +2,23 @@ import UIKit
 import Firebase
 
 class LogOutViewController: UIViewController {
-
+    
+    @IBOutlet weak var logOutStyle: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
-        
+        logOutStyle.layer.cornerRadius = 20
     }
     
     @IBAction func logOutPressed(_ sender: UIButton) {
         
         do {
             try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
+            
         }
         catch {
             print(error)
             print("error: there was a problem loging out")
         }
-        
-//        guard (navigationController?.popToRootViewController(animated: true)) != nil
-//            else {
-//                print("No View Controller to Pop")
-//                return
-//        }
     }
 }
