@@ -73,7 +73,6 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     }
 
     @IBOutlet weak var editLable: UIButton!
-    
     @IBAction func edit(_ sender: UIButton) {
         addTableView.isEditing = !addTableView.isEditing
         if sender.currentTitle == "Edit" {

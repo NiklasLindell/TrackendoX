@@ -17,7 +17,6 @@ class LogInController: UIViewController {
         logInStyle.layer.cornerRadius = 20
         signUpStyle.layer.cornerRadius = 20
         
-     
     }
   
     @IBAction func logInPressed(_ sender: UIButton) {
@@ -36,6 +35,17 @@ class LogInController: UIViewController {
                 self.performSegue(withIdentifier: "goToList", sender: self)
             }
         }
+    }
+    
+    // tar bort tangentbordet när man klickar någonstans utanför det
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // tar bort tangentbordet när man klicka på return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return(true)
     }
     
     func createAlertLogIn(title: String, message:String ){

@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController{
             if error != nil {
                 print(error!)
                 SVProgressHUD.dismiss()
-                self.createAlertSignUp(title: "Try again!", message: "Your password needs to be at least 6 characters long.")
+                self.createAlertSignUp(title: "Something went wrong!", message: "Either the email address is already in use or your password is too short")
             }
             else {
                 SVProgressHUD.dismiss()
@@ -32,6 +32,17 @@ class SignUpViewController: UIViewController{
                 self.performSegue(withIdentifier: "goToList", sender: self)
             }
         }
+    }
+    
+    // tar bort tangentbordet när man klickar någonstans utanför det
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+   // tar bort tangentbordet när man klicka på return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return(true)
     }
     
     func createAlertSignUp(title: String, message:String ){
