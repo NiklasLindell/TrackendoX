@@ -91,6 +91,9 @@ class IntervalTimerViewController: UIViewController {
         startOutlet.layer.backgroundColor = UIColor.darkGray.cgColor
         stopOutlet.layer.backgroundColor = UIColor.clear.cgColor
         pauseOutlet.layer.backgroundColor = UIColor.clear.cgColor
+        runSliderOutlet.isEnabled = false
+        restSliderOutlet.isEnabled = false
+        roundSliderOutlet.isEnabled = false
     }
     
     //countdown timer
@@ -140,6 +143,9 @@ class IntervalTimerViewController: UIViewController {
             startOutlet.layer.backgroundColor = UIColor.clear.cgColor
             stopOutlet.layer.backgroundColor = UIColor.clear.cgColor
             pauseOutlet.layer.backgroundColor = UIColor.clear.cgColor
+            runSliderOutlet.isEnabled = true
+            restSliderOutlet.isEnabled = true
+            roundSliderOutlet.isEnabled = true
         }
     }
     
@@ -148,7 +154,7 @@ class IntervalTimerViewController: UIViewController {
         timer.invalidate()
         runTime = 0
         restTime = 0
-        rounds = 1
+        rounds = 0
         runSliderOutlet.setValue(50, animated: true)
         restSliderOutlet.setValue(50, animated: true)
         restSliderOutlet.setValue(25, animated: true)
@@ -156,8 +162,10 @@ class IntervalTimerViewController: UIViewController {
         timeLbl.text = "0"
         runVSrestLbl.text = "Activity"
         runVSrestLbl.textColor = UIColor.white
+        runSliderOutlet.isEnabled = true
+        restSliderOutlet.isEnabled = true
+        roundSliderOutlet.isEnabled = true
         
-        //audioPlayer.stop()
         stopOutlet.layer.backgroundColor = UIColor.darkGray.cgColor
         startOutlet.isEnabled = true
         startOutlet.layer.backgroundColor = UIColor.clear.cgColor
@@ -172,6 +180,9 @@ class IntervalTimerViewController: UIViewController {
         startOutlet.layer.backgroundColor = UIColor.clear.cgColor
         stopOutlet.layer.backgroundColor = UIColor.clear.cgColor
         pauseOutlet.layer.backgroundColor = UIColor.darkGray.cgColor
+        runSliderOutlet.isEnabled = true
+        restSliderOutlet.isEnabled = true
+        roundSliderOutlet.isEnabled = true
     }
 }
 
