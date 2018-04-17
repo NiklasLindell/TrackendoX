@@ -46,9 +46,9 @@ class IntervalTimerViewController: UIViewController {
         pauseOutlet.layer.borderWidth = 1
         
         
-//        runTime = Int((runSliderOutlet.maximumValue - runSliderOutlet.minimumValue) * 0.5)
-//        restTime = Int((restSliderOutlet.maximumValue - restSliderOutlet.minimumValue) * 0.5)
-//        rounds = Int((roundSliderOutlet.maximumValue - roundSliderOutlet.minimumValue) * 0.5)
+        runTime = Int((runSliderOutlet.maximumValue - runSliderOutlet.minimumValue) * 0.5)
+        restTime = Int((restSliderOutlet.maximumValue - restSliderOutlet.minimumValue) * 0.5)
+        rounds = Int((roundSliderOutlet.maximumValue - roundSliderOutlet.minimumValue) * 0.5)
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "1beepAlarm", ofType: "mp3")!))
@@ -92,6 +92,9 @@ class IntervalTimerViewController: UIViewController {
     @IBAction func StartBtn(_ sender: Any) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(IntervalTimerViewController.counter), userInfo: nil, repeats: true)
         startOutlet.isEnabled = false
+        startOutlet.layer.backgroundColor = UIColor.darkGray.cgColor
+        stopOutlet.layer.backgroundColor = UIColor.clear.cgColor
+        pauseOutlet.layer.backgroundColor = UIColor.clear.cgColor
     }
     
     //countdown timer
@@ -134,6 +137,10 @@ class IntervalTimerViewController: UIViewController {
             else {
                 print("hej")
                 timer.invalidate()
+                startOutlet.isEnabled = true
+                startOutlet.layer.backgroundColor = UIColor.clear.cgColor
+                stopOutlet.layer.backgroundColor = UIColor.clear.cgColor
+                pauseOutlet.layer.backgroundColor = UIColor.clear.cgColor
             }
         }
     }
@@ -152,8 +159,10 @@ class IntervalTimerViewController: UIViewController {
         runVSrestLbl.textColor = UIColor.white
         
         //audioPlayer.stop()
-        
+        stopOutlet.layer.backgroundColor = UIColor.darkGray.cgColor
         startOutlet.isEnabled = true
+        startOutlet.layer.backgroundColor = UIColor.clear.cgColor
+        pauseOutlet.layer.backgroundColor = UIColor.clear.cgColor
     }
     
     //Pausar klockan
@@ -161,6 +170,9 @@ class IntervalTimerViewController: UIViewController {
         timer.invalidate()
         pause = false
         startOutlet.isEnabled = true
+        startOutlet.layer.backgroundColor = UIColor.clear.cgColor
+        stopOutlet.layer.backgroundColor = UIColor.clear.cgColor
+        pauseOutlet.layer.backgroundColor = UIColor.darkGray.cgColor
     }
  
 }
