@@ -6,6 +6,8 @@ class IntervalTimerViewController: UIViewController {
     
     @IBOutlet weak var totalTime: UILabel!
     
+    @IBOutlet weak var roundsLable: UILabel!
+    
     @IBOutlet weak var runVSrestLbl: UILabel!
     
     @IBOutlet weak var runTextField: UILabel!
@@ -27,8 +29,9 @@ class IntervalTimerViewController: UIViewController {
     var runTime  = 0
     var restTime = 0
     var rounds = 1
-    var timePassed = 0
     var pause = false
+    var roundsNumber = 1
+    var roundsTotal = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +61,9 @@ class IntervalTimerViewController: UIViewController {
     @IBAction func runSlider(_ sender: UISlider) {
         runTime = Int(sender.value)
         runTextField.text = "Run: " + String(runTime) + " sec"
-        totalTime.text = String((runTime + restTime) * rounds) + " sec"
+        totalTime.text = "Total: " + String((runTime + restTime) * rounds) + " sec"
         if (runTime + restTime) * rounds >= 60 {
-            totalTime.text = String(((runTime + restTime) * rounds)/60) + " min"
+            totalTime.text = "Total: " + String(((runTime + restTime) * rounds)/60) + " min"
         }
     }
     
@@ -68,19 +71,20 @@ class IntervalTimerViewController: UIViewController {
     @IBAction func restSlider(_ sender: UISlider) {
         restTime = Int(sender.value)
         restTextField.text = "Rest: " + String(restTime) + " sec"
-        totalTime.text = String((runTime + restTime) * rounds) + " sec"
+        totalTime.text = "Total: " + String((runTime + restTime) * rounds) + " sec"
         if (runTime + restTime) * rounds >= 60 {
-            totalTime.text = String(((runTime + restTime) * rounds)/60) + " min"
+            totalTime.text = "Total: " + String(((runTime + restTime) * rounds)/60) + " min"
         }
     }
     
     //slidern som ändrar antal rundor
     @IBAction func roundSlider(_ sender: UISlider) {
         rounds = Int(sender.value)
+        roundsTotal = Int(sender.value)
         roundsTextField.text = String(rounds) + " rounds"
-        totalTime.text = String((runTime + restTime) * rounds) + " sec"
+        totalTime.text = "Total: " + String((runTime + restTime) * rounds) + " sec"
         if (runTime + restTime) * rounds >= 60 {
-            totalTime.text = String(((runTime + restTime) * rounds)/60) + " min"
+            totalTime.text = "Total: " + String(((runTime + restTime) * rounds)/60) + " min"
         }
     }
     
@@ -94,27 +98,20 @@ class IntervalTimerViewController: UIViewController {
         runSliderOutlet.isEnabled = false
         restSliderOutlet.isEnabled = false
         roundSliderOutlet.isEnabled = false
+        
     }
     
     //countdown timer
     @objc func counter() {
         if rounds > 0 {
             
-            let tot = (Int(runSliderOutlet.value) + Int(restSliderOutlet.value)) * Int(roundSliderOutlet.value)
-            
-            //print("Run: \(runTime) Rest: \(restTime) Rounds: \(rounds)  Total: \(tot - timePassed)")
-            
-            totalTime.text = String(tot - timePassed )  + " sec"
-            if (runTime + restTime) * rounds >= 60 {
-                totalTime.text = String(((runTime + restTime) * rounds)/60) + " min"
-            }
+            roundsLable.text = "\(roundsNumber)/\(roundsTotal)"
             
             if (runTime > 0) {
                 runVSrestLbl.text = "RUN"
                 runVSrestLbl.textColor = UIColor.green
                 timeLbl.text = String(runTime)
                 runTime -= 1
-                timePassed += 1
             }
                 
             else if (restTime > 0 && runTime == 0){
@@ -122,13 +119,16 @@ class IntervalTimerViewController: UIViewController {
                 runVSrestLbl.textColor = UIColor.red
                 timeLbl.text = String(restTime)
                 restTime -= 1
-                timePassed += 1
             }
             
             if (runTime <= 0 && restTime <= 0) {
                 rounds -= 1
                 runTime = Int(runSliderOutlet.value)
                 restTime = Int(restSliderOutlet.value)
+        
+                roundsNumber += 1
+            }
+            if (runTime == 0 || restTime == 0){
                 audioPlayer?.play()
             }
         }
@@ -137,7 +137,6 @@ class IntervalTimerViewController: UIViewController {
             timer.invalidate()
             timeLbl.text = "\(0)"
             totalTime.text = "\(0) sec"
-            timePassed = 0
             runVSrestLbl.text = "Activity"
             runVSrestLbl.textColor = UIColor.white
             startOutlet.isEnabled = true
@@ -153,6 +152,8 @@ class IntervalTimerViewController: UIViewController {
             runTextField.text = "Run"
             restTextField.text = "Rest"
             roundsTextField.text = "Rounds"
+            roundsLable.text = "00/00"
+            totalTime.text = "Total time"
         }
     }
     
@@ -171,6 +172,7 @@ class IntervalTimerViewController: UIViewController {
         runTextField.text = "Run"
         restTextField.text = "Rest"
         roundsTextField.text = "Rounds"
+        roundsLable.text = "00/00"
         runVSrestLbl.textColor = UIColor.white
         runSliderOutlet.isEnabled = true
         restSliderOutlet.isEnabled = true
