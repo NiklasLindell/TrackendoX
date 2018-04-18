@@ -96,7 +96,9 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     
     @IBAction func addExerciseButton(_ sender: UIButton) {
         
-       workout?.exercises.append(exerciseTextField.text!)
+        if exerciseTextField.text != "" {
+            workout?.exercises.append(exerciseTextField.text!)
+        }
         exerciseTextField.text? = ""
         
         addTableView.reloadData()
@@ -107,10 +109,16 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
 
         workout?.title = titleTextField.text!
         workoutList?.append(workout!)
+        
+        workout = nil
+        
 
         createAlertAdd(title: "Saved", message: "Your workout has been saved")
         titleTextField.text = ""
         exerciseTextField.text = ""
+        addTableView.reloadData()
+        
+        
         
         let workoutDB = Database.database().reference().child("Workouts")
         

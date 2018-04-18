@@ -35,7 +35,7 @@ class ResetPassword: UIViewController {
     func resetPassword(email: String){
         Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
             if error == nil{
-                self.createAlertLogIn(title: "Reset Password!", message: "An email with information on how to reset your password has been sent to you.")
+                self.createAlertLogIn(title: "Reset Password!", message: "An email with information on how to reset your password has been sent to you")
             } else{
                 print(error!.localizedDescription)
             }

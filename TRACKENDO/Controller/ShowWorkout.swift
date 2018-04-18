@@ -22,7 +22,7 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource 
     let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
         
         cell.textLabel?.textColor = UIColor.white
-        cell.textLabel?.font = UIFont(name:"Copperdale", size:20)
+        cell.textLabel?.font = UIFont(name: (cell.textLabel?.font.fontName)!, size:20)
         
         cell.textLabel?.text = workout?.exercises[indexPath.row]
         
