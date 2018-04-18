@@ -26,7 +26,7 @@ class IntervalTimerViewController: UIViewController {
     var timer = Timer()
     var runTime  = 0
     var restTime = 0
-    var rounds = 0
+    var rounds = 1
     var timePassed = 0
     var pause = false
     
@@ -102,7 +102,7 @@ class IntervalTimerViewController: UIViewController {
             
             let tot = (Int(runSliderOutlet.value) + Int(restSliderOutlet.value)) * Int(roundSliderOutlet.value)
             
-            print("Run: \(runTime) Rest: \(restTime) Rounds: \(rounds)  Total: \(tot - timePassed)")
+            //print("Run: \(runTime) Rest: \(restTime) Rounds: \(rounds)  Total: \(tot - timePassed)")
             
             totalTime.text = String(tot - timePassed )  + " sec"
             if (runTime + restTime) * rounds >= 60 {
@@ -135,10 +135,11 @@ class IntervalTimerViewController: UIViewController {
             
         else {
             timer.invalidate()
-            timeLbl.text = "0"
-            totalTime.text = "0"
+            timeLbl.text = "\(0)"
+            totalTime.text = "\(0) sec"
             timePassed = 0
             runVSrestLbl.text = "Activity"
+            runVSrestLbl.textColor = UIColor.white
             startOutlet.isEnabled = true
             startOutlet.layer.backgroundColor = UIColor.clear.cgColor
             stopOutlet.layer.backgroundColor = UIColor.clear.cgColor
@@ -154,22 +155,25 @@ class IntervalTimerViewController: UIViewController {
         timer.invalidate()
         runTime = 0
         restTime = 0
-        rounds = 0
+        rounds = 1
         runSliderOutlet.setValue(50, animated: true)
         restSliderOutlet.setValue(50, animated: true)
-        restSliderOutlet.setValue(25, animated: true)
-        totalTime.text = "0 sec"
-        timeLbl.text = "0"
+        roundSliderOutlet.setValue(16, animated: true)
+        timeLbl.text = "\(48)"
+        totalTime.text = "Total time"
         runVSrestLbl.text = "Activity"
+        runTextField.text = "Run"
+        restTextField.text = "Rest"
+        roundsTextField.text = "Rounds"
         runVSrestLbl.textColor = UIColor.white
         runSliderOutlet.isEnabled = true
         restSliderOutlet.isEnabled = true
         roundSliderOutlet.isEnabled = true
-        
         stopOutlet.layer.backgroundColor = UIColor.darkGray.cgColor
         startOutlet.isEnabled = true
         startOutlet.layer.backgroundColor = UIColor.clear.cgColor
         pauseOutlet.layer.backgroundColor = UIColor.clear.cgColor
+        
     }
     
     //Pausar klockan
@@ -180,9 +184,9 @@ class IntervalTimerViewController: UIViewController {
         startOutlet.layer.backgroundColor = UIColor.clear.cgColor
         stopOutlet.layer.backgroundColor = UIColor.clear.cgColor
         pauseOutlet.layer.backgroundColor = UIColor.darkGray.cgColor
-        runSliderOutlet.isEnabled = true
-        restSliderOutlet.isEnabled = true
-        roundSliderOutlet.isEnabled = true
+        runSliderOutlet.isEnabled = false
+        restSliderOutlet.isEnabled = false
+        roundSliderOutlet.isEnabled = false
     }
 }
 
