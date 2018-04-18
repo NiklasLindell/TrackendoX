@@ -147,6 +147,12 @@ class IntervalTimerViewController: UIViewController {
             runSliderOutlet.isEnabled = true
             restSliderOutlet.isEnabled = true
             roundSliderOutlet.isEnabled = true
+            runSliderOutlet.setValue(50, animated: true)
+            restSliderOutlet.setValue(50, animated: true)
+            roundSliderOutlet.setValue(16, animated: true)
+            runTextField.text = "Run"
+            restTextField.text = "Rest"
+            roundsTextField.text = "Rounds"
         }
     }
     
@@ -173,6 +179,7 @@ class IntervalTimerViewController: UIViewController {
         startOutlet.isEnabled = true
         startOutlet.layer.backgroundColor = UIColor.clear.cgColor
         pauseOutlet.layer.backgroundColor = UIColor.clear.cgColor
+        
         
     }
     
