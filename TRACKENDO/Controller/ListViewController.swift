@@ -8,6 +8,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var workoutList : [Workout]?
     let cellID = "cellIdentifier"
     var selectedWorkout : Workout?
+    var ref : DatabaseReference!
+    
+
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,10 +21,21 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             workoutList = []
             
         }
-        tableView?.reloadData()
         
+        ref = Database.database().reference()
         
-        
+        ref.child("Workouts").observe(.value) { (snapshot) in
+            
+            var workoutList : [Workout] = []
+            
+            for item in snapshot.children{
+                let listItem = Workout(snapshot: item as! DataSnapshot)
+                workoutList.append(listItem)
+            }
+            self.workoutList = workoutList
+            self.tableView?.reloadData()
+        }
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,7 +70,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
+            let workout = workoutList![indexPath.row]
             workoutList?.remove(at: indexPath.row)
+            removeFromDB(workout: workout)
             tableView.reloadData()
         }
     }
@@ -80,6 +96,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             destination.workout =  selectedWorkout!
             
         }
+    }
+    
+    func removeFromDB(workout : Workout){
+        
+        let woRef = ref.child("Workouts").child(workout.id)
+        woRef.removeValue()
     }
     
 }

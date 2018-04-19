@@ -9,6 +9,7 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     
     var workout : Workout?
     
+    
     @IBOutlet weak var addTableView: UITableView!
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -109,30 +110,20 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
 
         workout?.title = titleTextField.text!
         workoutList?.append(workout!)
-        
-        workout = nil
-        
-
+    
         createAlertAdd(title: "Saved", message: "Your workout has been saved")
         titleTextField.text = ""
         exerciseTextField.text = ""
         addTableView.reloadData()
         
         
-        
         let workoutDB = Database.database().reference().child("Workouts")
         
-        workoutDB.childByAutoId().setValue(workout?.toAnyObject()){
-            (error, ref) in
-            
-            if error != nil {
-                print(error)
-            } else {
-                print("Workout saved")
-            }
-        }
+        let childRef = workoutDB.childByAutoId()
+        childRef.setValue(workout?.toAnyObject())
         
-    
+        workout = nil
+        
     }
     
     
@@ -170,21 +161,6 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-    
-//    func Alert(){
-//    let refreshAlert = UIAlertController(title: "Warning!", message: "All data will be lost if you go back without saving first.", preferredStyle: UIAlertControllerStyle.alert)
-//
-//    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-//    print("Handle Ok logic here")
-//    }))
-//
-//    refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-//    print("Handle Cancel Logic here")
-//    }))
-//
-//    present(refreshAlert, animated: true, completion: nil)
-//    }
 }
 
 

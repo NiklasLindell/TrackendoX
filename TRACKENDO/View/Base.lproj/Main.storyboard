@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kDC-Oz-oPr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qYc-Qv-DID">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,7 +25,7 @@
                                 <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" id="EdI-Mv-Ef9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" id="EdI-Mv-Ef9">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EdI-Mv-Ef9" id="tOG-nP-Rm3">
@@ -153,7 +153,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Your workout" prompt=" " id="IV9-ZZ-tKb">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="BackButton" id="xAC-va-z8B">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="Back" id="xAC-va-z8B">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="jrh-yk-zgZ"/>
                                             </connections>
@@ -259,7 +259,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="0Hv-hN-gKz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -348,7 +348,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="uKP-sB-gwv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -423,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Er8-pm-Mp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4167.1999999999998" y="-1437.9310344827588"/>
+            <point key="canvasLocation" x="4086" y="-1437"/>
         </scene>
         <!--Reset password-->
         <scene sceneID="dvI-hV-b9C">
@@ -449,7 +449,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Reset password" prompt=" " id="B2r-pC-Byz">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="BackButton" id="ggz-89-suK">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="Back" id="ggz-89-suK">
                                             <connections>
                                                 <segue destination="qYc-Qv-DID" kind="show" id="9OC-16-HcI"/>
                                             </connections>
@@ -559,7 +559,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Sign up" prompt=" " id="cdO-qP-R35">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="BackButton" id="GYf-UZ-Vyl">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="Back" id="GYf-UZ-Vyl">
                                             <connections>
                                                 <segue destination="qYc-Qv-DID" kind="show" id="GG2-Xx-3y3"/>
                                             </connections>
@@ -632,7 +632,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="2G3-Bb-4Uy">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="2G3-Bb-4Uy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRl-1O-B3q">
@@ -680,7 +680,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="8Fn-8f-DeR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="45"/>
                                 <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -691,7 +691,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NsK-QC-RCi" firstAttribute="leading" secondItem="l29-aG-WBb" secondAttribute="leading" constant="78" id="Dvw-iN-XBT"/>
                             <constraint firstItem="yRl-1O-B3q" firstAttribute="trailing" secondItem="l29-aG-WBb" secondAttribute="trailing" id="M3y-ba-9We"/>
@@ -716,7 +716,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RB6-op-LEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5205.6000000000004" y="-1437.0314842578712"/>
+            <point key="canvasLocation" x="4943" y="-1437"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="RIN-zq-eTL">
@@ -863,7 +863,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Create a workout" prompt=" " id="4Dh-i7-zCw">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="BackButton" id="IFv-L3-87N">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="Back" id="IFv-L3-87N">
                                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" identifier="goToTableView" id="GKy-7P-hl8"/>
@@ -892,7 +892,7 @@
                                 <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="9o0-OL-2OF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="9o0-OL-2OF">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9o0-OL-2OF" id="39l-0y-m6f">
@@ -1002,16 +1002,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Arm" width="30" height="30"/>
-        <image name="BackButton" width="24" height="24"/>
+        <image name="Arm" width="33" height="33"/>
+        <image name="Back" width="33" height="33"/>
         <image name="Background" width="4480" height="6720"/>
-        <image name="LogOut" width="25" height="25"/>
-        <image name="Timer" width="30" height="30"/>
+        <image name="LogOut" width="30" height="30"/>
+        <image name="Timer" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GG2-Xx-3y3"/>
-        <segue reference="eO7-xs-qTG"/>
-        <segue reference="zvX-0b-Xx6"/>
+        <segue reference="q6z-LM-Oxe"/>
+        <segue reference="9OC-16-HcI"/>
+        <segue reference="PjC-aT-hLy"/>
+        <segue reference="cVi-q7-JLX"/>
         <segue reference="GKy-7P-hl8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
