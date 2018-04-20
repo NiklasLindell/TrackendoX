@@ -23,7 +23,6 @@
 		4F79545F20654C24000AF9A4 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79545E20654C24000AF9A4 /* LogInController.swift */; };
 		4F79546120654C35000AF9A4 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79546020654C35000AF9A4 /* LogOutViewController.swift */; };
 		4F79546520654D02000AF9A4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79546420654D02000AF9A4 /* SignUpViewController.swift */; };
-		4F79546720655A76000AF9A4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79546620655A76000AF9A4 /* WelcomeViewController.swift */; };
 		4FB0389A2074F66300D06C0B /* IntervalTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB038992074F66200D06C0B /* IntervalTimerViewController.swift */; };
 		4FD2D1402057EE60004CAF36 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4FD2D13F2057EE60004CAF36 /* README.md */; };
 		4FD3F6C22066ACBD003A5484 /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */; };
@@ -61,7 +60,6 @@
 		4F79545E20654C24000AF9A4 /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		4F79546020654C35000AF9A4 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		4F79546420654D02000AF9A4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		4F79546620655A76000AF9A4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4FB038992074F66200D06C0B /* IntervalTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerViewController.swift; sourceTree = "<group>"; };
 		4FD2D13F2057EE60004CAF36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				4F79545E20654C24000AF9A4 /* LogInController.swift */,
 				4FF066272084F6CB001BB5DB /* ResetPassword.swift */,
 				4F79546420654D02000AF9A4 /* SignUpViewController.swift */,
-				4F79546620655A76000AF9A4 /* WelcomeViewController.swift */,
 				4F595D272057EC3B00E3DB0A /* ListViewController.swift */,
 				4FD3F6C12066ACBD003A5484 /* AddWorkoutViewController.swift */,
 				4F2430CD207E2FB7006CAEA9 /* ShowWorkout.swift */,
@@ -447,7 +444,6 @@
 				4FB0389A2074F66300D06C0B /* IntervalTimerViewController.swift in Sources */,
 				4F79546120654C35000AF9A4 /* LogOutViewController.swift in Sources */,
 				4F595D262057EC3B00E3DB0A /* AppDelegate.swift in Sources */,
-				4F79546720655A76000AF9A4 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
