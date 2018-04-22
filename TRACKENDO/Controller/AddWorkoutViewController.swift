@@ -110,7 +110,7 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     
     @IBAction func savePressed(_ sender: UIButton) {
         
-        if (titleTextField.text != "" && exerciseTextField.text == "" && addTableView != nil){
+        if (titleTextField.text != "" && exerciseTextField.text == "" && workout?.exercises.count != 0){
 
             workout?.title = titleTextField.text!
             workoutList?.append(workout!)
