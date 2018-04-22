@@ -86,15 +86,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-//     skickar över listan från denna sida till add-sidan så att dem är samma
+//     Skickar över listan från denna sida till ShowWorkout så att dem är samma
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == segueToAdd) {
-            let destination = segue.destination as! AddWorkoutViewController
-            destination.workoutList = self.workoutList
-        } else if (segue.identifier == segueToShow) {
+            if (segue.identifier == segueToShow) {
              let destination = segue.destination as! ShowWorkout
             destination.workout =  selectedWorkout!
-            
+
         }
     }
     

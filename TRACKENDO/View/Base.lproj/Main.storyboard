@@ -58,7 +58,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6V0-HA-t50">
                                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <segue destination="rXz-eA-wRK" kind="show" identifier="goToAdd" animates="NO" id="q6z-LM-Oxe"/>
+                                                <segue destination="rXz-eA-wRK" kind="show" identifier="goToAdd" id="q6z-LM-Oxe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -882,6 +882,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="Back" id="IFv-L3-87N">
                                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
+                                                <action selector="backPressed:" destination="rXz-eA-wRK" id="qLy-sX-XeL"/>
                                                 <segue destination="BYZ-38-t0r" kind="show" identifier="goToTableView" id="GKy-7P-hl8"/>
                                             </connections>
                                         </barButtonItem>
@@ -935,7 +936,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2e-Rb-I3F">
                                 <rect key="frame" x="302" y="172" width="66" height="40"/>
@@ -957,7 +958,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18S-v4-SZq">
                                 <rect key="frame" x="19" y="592" width="337" height="55"/>
@@ -1028,7 +1029,7 @@
         <segue reference="wQI-Yq-PYu"/>
         <segue reference="PjC-aT-hLy"/>
         <segue reference="zvX-0b-Xx6"/>
-        <segue reference="Vlm-0b-DPf"/>
+        <segue reference="GKy-7P-hl8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -57,6 +57,10 @@ class IntervalTimerViewController: UIViewController {
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        timer.invalidate()
+    }
+    
     //slidern som ändrar "run" sekundrarna
     @IBAction func runSlider(_ sender: UISlider) {
         runTime = Int(sender.value)

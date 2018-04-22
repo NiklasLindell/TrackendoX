@@ -103,40 +103,40 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         exerciseTextField.text? = ""
         
         addTableView.reloadData()
+        
+        view.endEditing(true)
     }
     
     
     @IBAction func savePressed(_ sender: UIButton) {
+        
+        if (titleTextField.text != "" && exerciseTextField.text == "" && addTableView != nil){
 
-        workout?.title = titleTextField.text!
-        workoutList?.append(workout!)
-    
-        createAlertAdd(title: "Saved", message: "Your workout has been saved")
-        titleTextField.text = ""
-        exerciseTextField.text = ""
-        addTableView.reloadData()
+            workout?.title = titleTextField.text!
+            workoutList?.append(workout!)
         
-        
-        let workoutDB = Database.database().reference().child("Workouts")
-        
-        let childRef = workoutDB.childByAutoId()
-        childRef.setValue(workout?.toAnyObject())
-        
-        workout = nil
+            createAlertAdd(title: "Saved", message: "Your workout has been saved")
+            titleTextField.text = ""
+            exerciseTextField.text = ""
+            addTableView.reloadData()
+          
+            let workoutDB = Database.database().reference().child("Workouts")
+            
+            let childRef = workoutDB.childByAutoId()
+            childRef.setValue(workout?.toAnyObject())
+            
+            workout?.exercises.removeAll()
+            addTableView.reloadData()
+        }
         
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
-
-        print("prep for segue")
-
-        if (segue.identifier == segueID) {
-
-            let destination = segue.destination as! ListViewController
-            destination.workoutList = self.workoutList
+    @IBAction func backPressed(_ sender: UIButton) {
+        
+        if (titleTextField.text != "" && exerciseTextField.text == "" && addTableView != nil){
+            createAlertAdd(title: "Hey!", message: "You need to save your workout before you go back")
         }
-   }
+    }
     
     // tar bort tangentbordet när man klickar någonstans utanför det
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
