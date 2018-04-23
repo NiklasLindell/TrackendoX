@@ -23,7 +23,11 @@ class Workout {
     init( snapshot : DataSnapshot ) {
         let snapshotValue = snapshot.value as! [ String : AnyObject]
         title = snapshotValue["title"] as! String
-        exercises = snapshotValue["exercises"] as! [String]
+        if let exercises = snapshotValue["exercises"] as? [String] {
+            self.exercises = exercises
+        } else {
+            self.exercises = [String]()
+        }
         date = snapshotValue["date"] as! String
         id = snapshot.key
     }

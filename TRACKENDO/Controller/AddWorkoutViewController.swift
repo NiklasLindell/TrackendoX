@@ -67,7 +67,7 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         
         if editingStyle == .delete {
             workout?.exercises.remove(at: indexPath.row)
-            tableView.reloadData()
+            addTableView.reloadData()
         }
     }
     

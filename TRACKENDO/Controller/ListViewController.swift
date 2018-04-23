@@ -28,7 +28,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         ref = Database.database().reference()
         
-        ref.child(currentUserId!).child("Workouts").observe(.value) { (snapshot) in
+        ref.child(currentUserId!).child("Workouts").observeSingleEvent(of: .value, with: { (snapshot) in
             
             var workoutList : [Workout] = []
             
@@ -38,7 +38,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             self.workoutList = workoutList
             self.tableView?.reloadData()
-        }
+        })
 
     }
     
@@ -98,7 +98,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if (segue.identifier == segueToShow) {
              let destination = segue.destination as! ShowWorkout
-            destination.workout =  selectedWorkout!
+                destination.workout =  selectedWorkout!
 
         }
     }
@@ -109,16 +109,26 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         woRef.removeValue()
     }
     
-    @IBAction func logOutPressed(_ sender: UIButton) {
+//    @IBAction func logOutPressed(_ sender: UIButton) {
+//
+//        do {
+//            try Auth.auth().signOut()
+//        }
+//        catch {
+//            print("error: there was a problem logging out")
+//        }
+//    }
+    
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
         
         do {
             try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
         }
         catch {
             print("error: there was a problem logging out")
         }
     }
-    
     
 }
 
