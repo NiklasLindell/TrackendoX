@@ -9,6 +9,9 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     
     var workout : Workout?
     
+    var currentUserId = Auth.auth().currentUser?.uid
+
+    
     
     @IBOutlet weak var addTableView: UITableView!
     
@@ -119,8 +122,9 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
             titleTextField.text = ""
             exerciseTextField.text = ""
             addTableView.reloadData()
+            
+            let workoutDB = Database.database().reference().child(currentUserId!).child("Workouts")
           
-            let workoutDB = Database.database().reference().child("Workouts")
             
             let childRef = workoutDB.childByAutoId()
             childRef.setValue(workout?.toAnyObject())
@@ -129,13 +133,6 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
             addTableView.reloadData()
         }
         
-    }
-    
-    @IBAction func backPressed(_ sender: UIButton) {
-        
-        if (titleTextField.text != "" && exerciseTextField.text == "" && addTableView != nil){
-            createAlertAdd(title: "Hey!", message: "You need to save your workout before you go back")
-        }
     }
     
     // tar bort tangentbordet när man klickar någonstans utanför det
@@ -161,6 +158,18 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (titleTextField.text != "" && exerciseTextField.text == "" && addTableView != nil){
+            
+            createAlertAdd(title: "Hey!", message: "You need to save your workout before you go back")
+            
+            return false
+        } else {
+            return true
+        }
+    }
+    
 }
 
 

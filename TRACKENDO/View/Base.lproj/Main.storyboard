@@ -882,7 +882,6 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="Back" id="IFv-L3-87N">
                                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <action selector="backPressed:" destination="rXz-eA-wRK" id="qLy-sX-XeL"/>
                                                 <segue destination="BYZ-38-t0r" kind="show" identifier="goToTableView" id="GKy-7P-hl8"/>
                                             </connections>
                                         </barButtonItem>

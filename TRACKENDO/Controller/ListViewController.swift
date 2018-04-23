@@ -9,6 +9,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     let cellID = "cellIdentifier"
     var selectedWorkout : Workout?
     var ref : DatabaseReference!
+    var currentUserId = Auth.auth().currentUser?.uid
     
 
     
@@ -24,7 +25,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         ref = Database.database().reference()
         
-        ref.child("Workouts").observe(.value) { (snapshot) in
+        ref.child(currentUserId!).child("Workouts").observe(.value) { (snapshot) in
             
             var workoutList : [Workout] = []
             
@@ -97,7 +98,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func removeFromDB(workout : Workout){
         
-        let woRef = ref.child("Workouts").child(workout.id)
+        let woRef = ref.child(currentUserId!).child("Workouts").child(workout.id)
         woRef.removeValue()
     }
     
