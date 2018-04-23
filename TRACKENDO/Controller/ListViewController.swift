@@ -11,6 +11,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var ref : DatabaseReference!
     var currentUserId = Auth.auth().currentUser?.uid
     
+    
+   
+    
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -60,7 +63,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
         if let workout = workoutList {
-            cell.textLabel?.text = workout[indexPath.row].title
+            cell.textLabel?.text = workout[indexPath.row].title + " " + workout[indexPath.row].date
+      
         }
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont(name:"Copperplate", size:25)
