@@ -16,7 +16,7 @@ class Workout {
         self.title = ""
         self.exercises = []
         self.id = ""
-        dateFormatter.dateFormat = "dd/MM-yy"
+        dateFormatter.dateFormat = "MM-dd-yyyy"
         self.date = dateFormatter.string(from: Date())
     }
  

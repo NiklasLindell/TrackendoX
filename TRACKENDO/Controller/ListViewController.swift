@@ -63,11 +63,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
         if let workout = workoutList {
-            cell.textLabel?.text = workout[indexPath.row].title + " " + workout[indexPath.row].date
+            cell.textLabel?.text = workout[indexPath.row].title
+            cell.detailTextLabel?.text =  workout[indexPath.row].date
       
         }
         cell.textLabel?.textColor = UIColor.white
+        cell.detailTextLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont(name:"Copperplate", size:25)
+        cell.detailTextLabel?.font = UIFont(name: "Copperplate", size: 15)
         return cell
     }
     
@@ -105,6 +108,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let woRef = ref.child(currentUserId!).child("Workouts").child(workout.id)
         woRef.removeValue()
     }
+    
+    @IBAction func logOutPressed(_ sender: UIButton) {
+        
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {
+            print("error: there was a problem logging out")
+        }
+    }
+    
     
 }
 
