@@ -54,7 +54,7 @@ class IntervalTimerViewController: UIViewController {
             audioPlayer = try? AVAudioPlayer(contentsOf: url)
             let audioSession = AVAudioSession.sharedInstance()
             do{
-            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            try audioSession.setCategory(AVAudioSessionCategoryAmbient)
             }
             catch{
                 
