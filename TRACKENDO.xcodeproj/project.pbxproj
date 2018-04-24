@@ -247,6 +247,11 @@
 					4F595D212057EC3B00E3DB0A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					4F595D352057EC3B00E3DB0A = {
 						CreatedOnToolsVersion = 9.2;

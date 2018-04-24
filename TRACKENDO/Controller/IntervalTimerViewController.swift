@@ -52,6 +52,13 @@ class IntervalTimerViewController: UIViewController {
         
         if let url = Bundle.main.url(forResource: "1beepAlarm", withExtension: "wav") {
             audioPlayer = try? AVAudioPlayer(contentsOf: url)
+            let audioSession = AVAudioSession.sharedInstance()
+            do{
+            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            }
+            catch{
+                
+            }
         } else {
             print("file not found ERROR")
         }
@@ -138,7 +145,7 @@ class IntervalTimerViewController: UIViewController {
                 roundsNumber += 1
             }
         }
-        
+            
         else {
             timer.invalidate()
             timeLbl.text = "00"
@@ -204,6 +211,7 @@ class IntervalTimerViewController: UIViewController {
         restSliderOutlet.isEnabled = false
         roundSliderOutlet.isEnabled = false
     }
+    
 }
 
 
