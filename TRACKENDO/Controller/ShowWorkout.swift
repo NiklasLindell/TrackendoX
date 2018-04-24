@@ -4,9 +4,8 @@ import Firebase
 class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var workout : Workout?
-   // var workoutList : [Workout]?
     var currentUserId = Auth.auth().currentUser?.uid
-     var ref : DatabaseReference!
+    var ref : DatabaseReference!
     
     @IBOutlet weak var exerciseTextField: UITextField!
     
@@ -24,8 +23,13 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
     @IBAction func addExercise(_ sender: UIButton) {
         
         if exerciseTextField.text != "" {
+            workout?.exercises.append(exerciseTextField.text!)
+            
+            let workoutRef = ref.child(currentUserId!).child("Workouts").child((workout?.id)!)
+            workoutRef.child("exercises").setValue(workout?.exercises)
         }
         
+
         exerciseTextField.text? = ""
         
         showWorkoutTable.reloadData()
@@ -71,17 +75,11 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         if editingStyle == .delete {
             removeFromDB(exerciseRow: indexPath.row)
-            
             workout?.exercises.remove(at: indexPath.row)
             showWorkoutTable.reloadData()
         }
     }
     
-//    func addToDB(){
-//        let exerciseRef = ref.child(currentUserId!).child("Workouts").child((workout?.id)!)
-//        exerciseRef.child("exercises").updateChildValues(workout?.toAnyObject())
-//
-//    }
     
     func removeFromDB(exerciseRow : Int){
         
@@ -111,6 +109,8 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
         let item = workout?.exercises[sourceIndexPath.row]
         workout?.exercises.remove(at: sourceIndexPath.row)
         workout?.exercises.insert(item!, at: destinationIndexPath.row)
+        let workoutRef = ref.child(currentUserId!).child("Workouts").child((workout?.id)!)
+        workoutRef.child("exercises").setValue(workout?.exercises)
     }
     
     // tar bort tangentbordet när man klickar någonstans utanför det
