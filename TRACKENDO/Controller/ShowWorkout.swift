@@ -11,14 +11,18 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
     @IBOutlet weak var showWorkoutTable: UITableView!
     @IBOutlet weak var addExerciseStyle: UIButton!
     
-
+    @IBOutlet weak var workoutTitle: UILabel!
+    
     
     override func viewDidLoad() {
         addExerciseStyle.layer.cornerRadius = 20
         editLabel.layer.cornerRadius = 20
         self.exerciseTextField.delegate = self
         ref = Database.database().reference()
-       
+        exerciseTextField.isHidden = true
+        addExerciseStyle.isHidden = true
+        editLabel.isHidden = true
+       workoutTitle.text = workout?.title
     }
 
     
@@ -75,19 +79,14 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            removeFromDB(exerciseRow: indexPath.row)
             workout?.exercises.remove(at: indexPath.row)
+            
+            let workoutRef = ref.child(currentUserId!).child("Workouts").child((workout?.id)!)
+            workoutRef.child("exercises").setValue(workout?.exercises)
             showWorkoutTable.reloadData()
+
         }
-    }
-    
-    
-    func removeFromDB(exerciseRow : Int){
-        
-        let exerciseRef = ref.child(currentUserId!).child("Workouts").child((workout?.id)!)
-        exerciseRef.child("exercises").child(String(exerciseRow)).removeValue()
-    }
-    
+    }    
     
     // lägger till ett checkmark vid högra sidan i tableviewn om man klickar på den och tar bort om man klickar igen
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -125,5 +124,21 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
         return(true)
     }
     
+    @IBOutlet weak var showEditStyle: UIBarButtonItem!
+    @IBAction func showEdit(_ sender: UIBarButtonItem) {
+        if showEditStyle.image == UIImage(named: "ShowEdit"){
+            showEditStyle.image = UIImage(named: "EditDone")
+            exerciseTextField.isHidden = false
+            addExerciseStyle.isHidden = false
+            editLabel.isHidden = false
+            workoutTitle.isHidden = true
+        } else {
+            showEditStyle.image = UIImage(named: "ShowEdit")
+            exerciseTextField.isHidden = true
+            addExerciseStyle.isHidden = true
+            editLabel.isHidden = true
+            workoutTitle.isHidden = false
+        }
+    }
 }
 

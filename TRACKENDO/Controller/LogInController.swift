@@ -24,7 +24,6 @@ class LogInController: UIViewController {
         if Auth.auth().currentUser != nil {
             performSegue(withIdentifier: "goToList", sender: self)
         }
-        
     }
   
     @IBAction func logInPressed(_ sender: UIButton) {
@@ -65,11 +64,9 @@ class LogInController: UIViewController {
         }))
         
         self.present(alert, animated: true, completion: nil)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
-    
 }

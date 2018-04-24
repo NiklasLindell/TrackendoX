@@ -12,9 +12,6 @@ class ResetPassword: UIViewController {
     
      @IBOutlet weak var restStyle: UIButton!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         restStyle.layer.cornerRadius = 20

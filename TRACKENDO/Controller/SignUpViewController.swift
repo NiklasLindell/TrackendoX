@@ -14,7 +14,6 @@ class SignUpViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpStyle.layer.cornerRadius = 20
-
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {

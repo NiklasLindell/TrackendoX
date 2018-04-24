@@ -4,15 +4,10 @@ import Firebase
 class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
   
     let segueID = "goToTableView"
-    
-    var workoutList : [Workout]? 
-    
+    var workoutList : [Workout]?
     var workout : Workout?
-    
     var currentUserId = Auth.auth().currentUser?.uid
 
-    
-    
     @IBOutlet weak var addTableView: UITableView!
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -24,13 +19,13 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     @IBOutlet weak var editStyle: UIButton!
     
     @IBOutlet weak var saveStyle: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addExerciseStyle.layer.cornerRadius = 20
         editStyle.layer.cornerRadius = 20
         saveStyle.layer.cornerRadius = 20
-        
         
         self.titleTextField.delegate = self
         self.exerciseTextField.delegate = self
@@ -54,12 +49,9 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont(name: (cell.textLabel?.font.fontName)!, size:20)
-        
-        
         cell.textLabel?.text = workout?.exercises[indexPath.row]
         
         return cell
-        
     }
     
     // gör så att man kan radera en rad i tableviewn genom att swipa med fingret
@@ -84,8 +76,6 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
         } else {
             editLable.setTitle("Edit", for: .normal)
         }
-        
-    
     }
     
     // gör så att man kan ändra ordningen på exercises när man skapar passet
@@ -104,9 +94,7 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
             workout?.exercises.append(exerciseTextField.text!)
         }
         exerciseTextField.text? = ""
-        
         addTableView.reloadData()
-        
         view.endEditing(true)
     }
     
@@ -124,15 +112,15 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
             addTableView.reloadData()
             
             let workoutDB = Database.database().reference().child(currentUserId!).child("Workouts")
-          
-            
             let childRef = workoutDB.childByAutoId()
             childRef.setValue(workout?.toAnyObject())
             
             workout?.exercises.removeAll()
             addTableView.reloadData()
         }
-        
+        else if (titleTextField.text != "" && workout?.exercises.count == 0){
+            createAlertAdd(title: "Try again!", message: "You need to add at least one exercise to your workout to save")
+        }
     }
     
     // tar bort tangentbordet när man klickar någonstans utanför det
@@ -162,14 +150,13 @@ class AddWorkoutViewController: UIViewController,UITextFieldDelegate, UITableVie
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (titleTextField.text != "" && exerciseTextField.text == "" && addTableView != nil){
             
-            createAlertAdd(title: "Hey!", message: "You need to save your workout before you go back")
+            createAlertAdd(title: "Hey!", message: "You need to save your workout before you can go back")
             
             return false
         } else {
             return true
         }
     }
-    
 }
 
 

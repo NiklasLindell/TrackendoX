@@ -10,10 +10,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var selectedWorkout : Workout?
     var ref : DatabaseReference!
     var currentUserId = Auth.auth().currentUser?.uid
-    
-    
-   
-    
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -109,25 +105,18 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         woRef.removeValue()
     }
     
-//    @IBAction func logOutPressed(_ sender: UIButton) {
-//
-//        do {
-//            try Auth.auth().signOut()
-//        }
-//        catch {
-//            print("error: there was a problem logging out")
-//        }
-//    }
-    
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         
-        do {
-            try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
-        }
-        catch {
-            print("error: there was a problem logging out")
-        }
+        let refreshAlert = UIAlertController(title: "Log out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
+            refreshAlert .dismiss(animated: true, completion: nil)
+        }))
+        present(refreshAlert, animated: true, completion: nil)
     }
     
 }
