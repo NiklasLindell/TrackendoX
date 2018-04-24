@@ -8,15 +8,17 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
     var ref : DatabaseReference!
     
     @IBOutlet weak var exerciseTextField: UITextField!
-    
     @IBOutlet weak var showWorkoutTable: UITableView!
     @IBOutlet weak var addExerciseStyle: UIButton!
+    
+
     
     override func viewDidLoad() {
         addExerciseStyle.layer.cornerRadius = 20
         editLabel.layer.cornerRadius = 20
         self.exerciseTextField.delegate = self
         ref = Database.database().reference()
+       
     }
 
     
@@ -28,7 +30,6 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
             let workoutRef = ref.child(currentUserId!).child("Workouts").child((workout?.id)!)
             workoutRef.child("exercises").setValue(workout?.exercises)
         }
-        
 
         exerciseTextField.text? = ""
         
@@ -123,6 +124,6 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
         textField.resignFirstResponder()
         return(true)
     }
-
+    
 }
 

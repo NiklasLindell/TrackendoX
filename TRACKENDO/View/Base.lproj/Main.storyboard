@@ -157,9 +157,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZD-2H-wwv">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZD-2H-wwv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="30"/>
@@ -170,7 +169,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Your workout" prompt=" " id="IV9-ZZ-tKb">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="Back" id="xAC-va-z8B">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="BackButton" id="xAC-va-z8B">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="jrh-yk-zgZ"/>
                                             </connections>
@@ -178,9 +177,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o3e-hv-vgd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o3e-hv-vgd">
                                 <rect key="frame" x="0.0" y="186" width="375" height="481"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -199,10 +197,12 @@
                                     <outlet property="delegate" destination="3ct-u2-zpi" id="YP2-Jj-ZXd"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XW-01-T1X">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XW-01-T1X">
                                 <rect key="frame" x="10" y="138" width="283" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vdG-L3-eci"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="21"/>
                                 <state key="normal" title="Add exercise">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -211,10 +211,12 @@
                                     <action selector="addExercise:" destination="3ct-u2-zpi" eventType="touchUpInside" id="Vaw-8B-QIE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhl-vc-1a9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhl-vc-1a9">
                                 <rect key="frame" x="301" y="138" width="66" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="g1S-Z6-Db8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="21"/>
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -223,17 +225,37 @@
                                     <action selector="editWorkout:" destination="3ct-u2-zpi" eventType="touchUpInside" id="HLK-Xy-pGr"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="You can add a new exercise here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="re3-km-Wj2">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="You can add a new exercise here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="re3-km-Wj2">
                                 <rect key="frame" x="15" y="95" width="345" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="0.68020397980000002" blue="0.33586119390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="JZo-sE-eP0"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1XW-01-T1X" firstAttribute="baseline" secondItem="Yhl-vc-1a9" secondAttribute="firstBaseline" id="6fO-Qq-z6M"/>
+                            <constraint firstItem="1XW-01-T1X" firstAttribute="top" secondItem="re3-km-Wj2" secondAttribute="bottom" constant="8" symbolic="YES" id="7LL-Rv-Xda"/>
+                            <constraint firstItem="cZD-2H-wwv" firstAttribute="leading" secondItem="LMf-vz-ZgR" secondAttribute="leading" id="8x5-A4-FzX"/>
+                            <constraint firstItem="1XW-01-T1X" firstAttribute="top" secondItem="Yhl-vc-1a9" secondAttribute="top" id="LOE-6K-jCr"/>
+                            <constraint firstItem="cZD-2H-wwv" firstAttribute="leading" secondItem="o3e-hv-vgd" secondAttribute="leading" id="Ovd-xx-wyM"/>
+                            <constraint firstItem="1XW-01-T1X" firstAttribute="leading" secondItem="Bsj-tN-4Kt" secondAttribute="leading" constant="10" id="PaH-v3-WEZ"/>
+                            <constraint firstAttribute="trailing" secondItem="cZD-2H-wwv" secondAttribute="trailing" id="Qpl-lq-2hG"/>
+                            <constraint firstItem="cZD-2H-wwv" firstAttribute="trailing" secondItem="o3e-hv-vgd" secondAttribute="trailing" id="T3Y-MX-3nK"/>
+                            <constraint firstItem="cZD-2H-wwv" firstAttribute="centerX" secondItem="re3-km-Wj2" secondAttribute="centerX" id="bb5-af-N2K"/>
+                            <constraint firstItem="o3e-hv-vgd" firstAttribute="bottom" secondItem="Bsj-tN-4Kt" secondAttribute="bottom" id="fpZ-IZ-cf5"/>
+                            <constraint firstItem="re3-km-Wj2" firstAttribute="top" secondItem="cZD-2H-wwv" secondAttribute="bottom" constant="17" id="hky-4a-HXe"/>
+                            <constraint firstItem="Bsj-tN-4Kt" firstAttribute="trailing" secondItem="Yhl-vc-1a9" secondAttribute="trailing" constant="8" id="hua-PL-Snd"/>
+                            <constraint firstItem="Yhl-vc-1a9" firstAttribute="leading" secondItem="1XW-01-T1X" secondAttribute="trailing" constant="8" symbolic="YES" id="ipo-zj-BHU"/>
+                            <constraint firstItem="o3e-hv-vgd" firstAttribute="top" secondItem="1XW-01-T1X" secondAttribute="bottom" constant="8" symbolic="YES" id="j2a-Mq-cbP"/>
+                            <constraint firstItem="cZD-2H-wwv" firstAttribute="top" secondItem="LMf-vz-ZgR" secondAttribute="top" id="lEK-E2-BdX"/>
+                            <constraint firstItem="re3-km-Wj2" firstAttribute="leading" secondItem="Bsj-tN-4Kt" secondAttribute="leading" constant="15" id="pE6-ee-arA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bsj-tN-4Kt"/>
                     </view>
                     <connections>
@@ -493,7 +515,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Reset password" prompt=" " id="B2r-pC-Byz">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="Back" id="ggz-89-suK">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="BackButton" id="ggz-89-suK">
                                             <connections>
                                                 <segue destination="qYc-Qv-DID" kind="show" id="9OC-16-HcI"/>
                                             </connections>
@@ -603,7 +625,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Sign up" prompt=" " id="cdO-qP-R35">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="Back" id="GYf-UZ-Vyl">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="BackButton" id="GYf-UZ-Vyl">
                                             <connections>
                                                 <segue destination="qYc-Qv-DID" kind="show" id="GG2-Xx-3y3"/>
                                             </connections>
@@ -829,7 +851,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Create a workout" prompt=" " id="4Dh-i7-zCw">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="Back" id="IFv-L3-87N">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="BackButton" id="IFv-L3-87N">
                                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" identifier="goToTableView" id="GKy-7P-hl8"/>
@@ -969,13 +991,12 @@
     </scenes>
     <resources>
         <image name="Arm" width="33" height="33"/>
-        <image name="Back" width="33" height="33"/>
+        <image name="BackButton" width="33" height="33"/>
         <image name="Background" width="4480" height="6720"/>
         <image name="LogOut" width="33" height="33"/>
         <image name="Timer" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bkr-ho-bvE"/>
         <segue reference="GG2-Xx-3y3"/>
         <segue reference="jrh-yk-zgZ"/>
     </inferredMetricsTieBreakers>
