@@ -72,9 +72,9 @@ class IntervalTimerViewController: UIViewController {
     @IBAction func runSlider(_ sender: UISlider) {
         runTime = Int(sender.value)
         runTextField.text = "Run: " + String(runTime) + " sec"
-        totalTime.text = "Total: " + String((runTime + restTime) * rounds) + " sec"
+        totalTimeCalcSec()
         if (runTime + restTime) * rounds >= 60 {
-            totalTime.text = "Total: " + String(((runTime + restTime) * rounds)/60) + " min"
+            totalTimeCalcMin()
         }
     }
     
@@ -82,9 +82,9 @@ class IntervalTimerViewController: UIViewController {
     @IBAction func restSlider(_ sender: UISlider) {
         restTime = Int(sender.value)
         restTextField.text = "Rest: " + String(restTime) + " sec"
-        totalTime.text = "Total: " + String((runTime + restTime) * rounds) + " sec"
+        totalTimeCalcSec()
         if (runTime + restTime) * rounds >= 60 {
-            totalTime.text = "Total: " + String(((runTime + restTime) * rounds)/60) + " min"
+            totalTimeCalcMin()
         }
     }
     
@@ -93,9 +93,9 @@ class IntervalTimerViewController: UIViewController {
         rounds = Int(sender.value)
         roundsTotal = Int(sender.value)
         roundsTextField.text = "Rounds: " + String(rounds)
-        totalTime.text = "Total: " + String((runTime + restTime) * rounds) + " sec"
+        totalTimeCalcSec()
         if (runTime + restTime) * rounds >= 60 {
-            totalTime.text = "Total: " + String(((runTime + restTime) * rounds)/60) + " min"
+            totalTimeCalcMin()
         }
     }
     
@@ -210,6 +210,13 @@ class IntervalTimerViewController: UIViewController {
         runSliderOutlet.isEnabled = false
         restSliderOutlet.isEnabled = false
         roundSliderOutlet.isEnabled = false
+    }
+    
+    func totalTimeCalcMin(){
+        totalTime.text = "Total: " + String(((runTime + restTime) * rounds)/60) + " min"
+    }
+    func totalTimeCalcSec(){
+        totalTime.text = "Total: " + String((runTime + restTime) * rounds) + " sec"
     }
     
 }
