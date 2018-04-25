@@ -117,6 +117,18 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             refreshAlert .dismiss(animated: true, completion: nil)
         }))
         present(refreshAlert, animated: true, completion: nil)
+        
+        do {
+            try Auth.auth().signOut()
+            
+            navigationController?.popToRootViewController(animated: true)
+            
+        }
+        catch {
+            print("error: there was a problem logging out")
+        }
+        
+       
     }
     
 }
