@@ -132,7 +132,7 @@ class ShowWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource,
             addExerciseStyle.isHidden = false
             editLabel.isHidden = false
             workoutTitle.isHidden = true
-        } else {
+        } else if (editLabel.currentTitle != "Done") {
             showEditStyle.image = UIImage(named: "ShowEdit")
             exerciseTextField.isHidden = true
             addExerciseStyle.isHidden = true
