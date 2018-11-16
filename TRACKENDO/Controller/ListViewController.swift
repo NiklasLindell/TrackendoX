@@ -13,10 +13,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     @IBOutlet weak var tableView: UITableView!
+
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if (workoutList == nil) {
             workoutList = []
             
